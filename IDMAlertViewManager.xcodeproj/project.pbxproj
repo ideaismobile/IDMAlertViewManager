@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		728CA59917D91276009854D7 /* Docs */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 728CA59C17D91276009854D7 /* Build configuration list for PBXAggregateTarget "Docs" */;
+			buildPhases = (
+				728CA59D17D91281009854D7 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Docs;
+			productName = Docs;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		72754A4F17D8FB6D001A329A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72754A4E17D8FB6D001A329A /* UIKit.framework */; };
 		72754A5117D8FB6D001A329A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72754A5017D8FB6D001A329A /* Foundation.framework */; };
@@ -21,6 +35,7 @@
 		72754A6F17D8FB6E001A329A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72754A5017D8FB6D001A329A /* Foundation.framework */; };
 		72754A7717D8FB6E001A329A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72754A7517D8FB6E001A329A /* InfoPlist.strings */; };
 		72754A7A17D8FB6E001A329A /* IDMAlertViewManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72754A7917D8FB6E001A329A /* IDMAlertViewManagerTests.m */; };
+		72754A8617D8FB8E001A329A /* IDMAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 72754A8517D8FB8E001A329A /* IDMAlertViewManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +68,8 @@
 		72754A7617D8FB6E001A329A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		72754A7817D8FB6E001A329A /* IDMAlertViewManagerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDMAlertViewManagerTests.h; sourceTree = "<group>"; };
 		72754A7917D8FB6E001A329A /* IDMAlertViewManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDMAlertViewManagerTests.m; sourceTree = "<group>"; };
+		72754A8417D8FB8E001A329A /* IDMAlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDMAlertViewManager.h; path = Classes/IDMAlertViewManager.h; sourceTree = "<group>"; };
+		72754A8517D8FB8E001A329A /* IDMAlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDMAlertViewManager.m; path = Classes/IDMAlertViewManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +99,7 @@
 		72754A4217D8FB6D001A329A = {
 			isa = PBXGroup;
 			children = (
+				72754A8317D8FB7A001A329A /* Classes */,
 				72754A5417D8FB6D001A329A /* IDMAlertViewManager */,
 				72754A7217D8FB6E001A329A /* IDMAlertViewManagerTests */,
 				72754A4D17D8FB6D001A329A /* Frameworks */,
@@ -152,6 +170,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		72754A8317D8FB7A001A329A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				72754A8417D8FB8E001A329A /* IDMAlertViewManager.h */,
+				72754A8517D8FB8E001A329A /* IDMAlertViewManager.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,6 +241,7 @@
 			targets = (
 				72754A4A17D8FB6D001A329A /* IDMAlertViewManager */,
 				72754A6A17D8FB6E001A329A /* IDMAlertViewManagerTests */,
+				728CA59917D91276009854D7 /* Docs */,
 			);
 		};
 /* End PBXProject section */
@@ -254,6 +282,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		728CA59D17D91281009854D7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"IDMAlertViewManager\" \\\n--project-company \"Ideais Mobile\" \\\n--company-id \"br.com.ideais\" \\\n--docset-desc \"References to the API and concept documentation for IDMAlertViewManager classes.\" \\\n--output ~/help \\\n--ignore .m \\\n--logformat xcode \\\n--exit-threshold 2 \\\n.";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -263,6 +304,7 @@
 			files = (
 				72754A5B17D8FB6D001A329A /* main.m in Sources */,
 				72754A5F17D8FB6D001A329A /* AppDelegate.m in Sources */,
+				72754A8617D8FB8E001A329A /* IDMAlertViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +460,20 @@
 			};
 			name = Release;
 		};
+		728CA59A17D91276009854D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		728CA59B17D91276009854D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -437,12 +493,22 @@
 				72754A7F17D8FB6E001A329A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		72754A8017D8FB6E001A329A /* Build configuration list for PBXNativeTarget "IDMAlertViewManagerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				72754A8117D8FB6E001A329A /* Debug */,
 				72754A8217D8FB6E001A329A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		728CA59C17D91276009854D7 /* Build configuration list for PBXAggregateTarget "Docs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				728CA59A17D91276009854D7 /* Debug */,
+				728CA59B17D91276009854D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
