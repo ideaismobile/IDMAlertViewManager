@@ -7,6 +7,7 @@
 //
 
 #define kDEFAULT_DISMISS_INDEX -1
+#define kHIGHER_ALERT_MESSAGE	@"Higher Priority Alert: %d"
 
 #import "IDMAlertViewManager.h"
 
@@ -54,6 +55,11 @@ static IDMAlertViewManager *_sharedInstance;
  */
 @property (nonatomic, strong) UIAlertView *alertView;
 
+/**
+ *  Indicates if the current alert view is visible. Necessary because [UIAlertView show] might be called, but it's `isVisible` is yet `NO`.
+ */
+@property (nonatomic) BOOL isAlertViewVisible;
+
 #pragma mark - Private Methods Declaration
 
 /**
@@ -71,7 +77,7 @@ static IDMAlertViewManager *_sharedInstance;
  *
  *  @param priority A IDMAlertPriority
  */
-- (void)checkImportanceAgainstPriority:(IDMAlertPriority)priority;
+- (BOOL)isMoreImportantThanPriority:(IDMAlertPriority)priority;
 
 /**
  *  Returns the shared instance for the singleton. Initializes it if it's nil.
@@ -186,19 +192,31 @@ static IDMAlertViewManager *_sharedInstance;
 				   failure:(IDMAlertViewFailureBlock)failureBlock
 			  otherButtons:(NSArray *)buttonsArray
 {
-	
 	IDMAlertViewManager *avm = [IDMAlertViewManager sharedInstance];
-	[avm checkImportanceAgainstPriority:priority];
+	if ([avm isMoreImportantThanPriority:priority])
+	{
+		if (failureBlock)
+		{
+			__block IDMAlertPriority currentPriority = avm.currentPriority;
+			dispatch_async(dispatch_get_main_queue(), ^{
+				NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kHIGHER_ALERT_MESSAGE, currentPriority] code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
+				failureBlock(error);
+			});
+		}
+		
+		return;
+	}
 	
 	avm.currentPriority		= priority;
 	avm.successBlock		= successBlock;
 	avm.failureBlock		= failureBlock;
+	avm.isAlertViewVisible	= YES;
 	
 	avm.alertView.title		= title;
 	avm.alertView.message	= text;
 	
 	[avm.alertView addButtonWithTitle:@"OK"];
-	for (NSString *buttonTitle in avm.buttonsArray)
+	for (NSString *buttonTitle in buttonsArray)
 	{
 		[avm.alertView addButtonWithTitle:buttonTitle];
 	}
@@ -223,10 +241,13 @@ static IDMAlertViewManager *_sharedInstance;
 {
 	if (self.successBlock)
 	{
+		__block IDMAlertViewSuccessBlock successBlock = self.successBlock;
 		dispatch_async(dispatch_get_main_queue(), ^{
-			self.successBlock(buttonIndex);
+			successBlock(buttonIndex);
 		});
 	}
+	
+	[self clearVolatileProperties];
 }
 
 #pragma mark - Private Methods
@@ -234,6 +255,8 @@ static IDMAlertViewManager *_sharedInstance;
 // Clears the volatile properties like `successBlock`, `failureBlock` and `currentPriority`.
 - (void)clearVolatileProperties
 {
+	self.isAlertViewVisible	= NO;
+	
 	self.alertView			= [UIAlertView new];
 	self.alertView.delegate = self;
 	
@@ -244,22 +267,34 @@ static IDMAlertViewManager *_sharedInstance;
 }
 
 // Check the importance of the current alert priority, if any, against the given one. If this priority is higher, dismiss the current alert.
-- (void)checkImportanceAgainstPriority:(IDMAlertPriority)priority
+- (BOOL)isMoreImportantThanPriority:(IDMAlertPriority)priority
 {
+	if (! self.isAlertViewVisible)
+	{
+		return NO;
+	}
+	
 	// Dismiss the current alert if it's priority is lower than `priority`.
-	if (self.alertView.isVisible && self.currentPriority < priority)
+	if (priority < self.currentPriority)
 	{
 		[self.alertView dismissWithClickedButtonIndex:kDEFAULT_DISMISS_INDEX animated:NO];
-		dispatch_async(dispatch_get_main_queue(), ^{
-			if (self.failureBlock)
-			{
-				NSError *error = [[NSError alloc] initWithDomain:@"Higher Priority Alert" code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
-				self.failureBlock(error);
-			}
-		});
+		
+		if (self.failureBlock)
+		{
+			__block IDMAlertViewFailureBlock failureBlock	= self.failureBlock;
+			__block IDMAlertPriority currentPriority		= self.currentPriority;
+			dispatch_async(dispatch_get_main_queue(), ^{
+				NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kHIGHER_ALERT_MESSAGE, currentPriority] code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
+				failureBlock(error);
+			});
+		}
 		
 		[self clearVolatileProperties];
+		
+		return NO;
 	}
+	
+	return YES;
 }
 
 // Returns the shared instance for the singleton. Initializes it if it's nil.

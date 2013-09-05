@@ -64,7 +64,7 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
 };
 
 /**
- *  An `UIAlertView` manager to handle different priorities alerts. Also terminates with the problem of having multiple alerts being displayed above one another.
+ *  An `UIAlertView` manager to handle different priorities alerts. Also terminates the problem of having multiple alerts being displayed above one another.
  *
  *	No more than one `UIAlertView` is visible at a time. If two alerts with the same priority pops, only the first arrived stay visible. The second one is dismissed calling the `errorBlock`, if any.
  *	If comes an alert with higher priority than the visible one, the old is dismissed and the new one is displayed.
