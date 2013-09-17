@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0460"
+   LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "72754A4A17D8FB6D001A329A"
+               BlueprintIdentifier = "72E39E3617E8CADF00FCB895"
                BuildableName = "IDMAlertViewManager.app"
                BlueprintName = "IDMAlertViewManager"
                ReferencedContainer = "container:IDMAlertViewManager.xcodeproj">
@@ -32,8 +32,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "72754A6A17D8FB6E001A329A"
-               BuildableName = "IDMAlertViewManagerTests.octest"
+               BlueprintIdentifier = "72E39E5117E8CADF00FCB895"
+               BuildableName = "IDMAlertViewManagerTests.xctest"
                BlueprintName = "IDMAlertViewManagerTests"
                ReferencedContainer = "container:IDMAlertViewManager.xcodeproj">
             </BuildableReference>
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "72754A4A17D8FB6D001A329A"
+            BlueprintIdentifier = "72E39E3617E8CADF00FCB895"
             BuildableName = "IDMAlertViewManager.app"
             BlueprintName = "IDMAlertViewManager"
             ReferencedContainer = "container:IDMAlertViewManager.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "72754A4A17D8FB6D001A329A"
+            BlueprintIdentifier = "72E39E3617E8CADF00FCB895"
             BuildableName = "IDMAlertViewManager.app"
             BlueprintName = "IDMAlertViewManager"
             ReferencedContainer = "container:IDMAlertViewManager.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "72754A4A17D8FB6D001A329A"
+            BlueprintIdentifier = "72E39E3617E8CADF00FCB895"
             BuildableName = "IDMAlertViewManager.app"
             BlueprintName = "IDMAlertViewManager"
             ReferencedContainer = "container:IDMAlertViewManager.xcodeproj">

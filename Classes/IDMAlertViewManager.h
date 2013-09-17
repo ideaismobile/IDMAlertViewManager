@@ -27,29 +27,29 @@ typedef void (^IDMAlertViewFailureBlock)(NSError *error);
 /**
  *  An enum of unsigned integers to assing alerts' priorities. The lower the integer, the higher the priority.
  *
- *	Although this enum sets a cluster of priorities, any integer above zero may be used.
+ *  Although this enum sets a cluster of priorities, any integer above or equal to zero may be used.
  */
 typedef NS_ENUM(NSUInteger, IDMAlertPriority)
 {
 	/**
-	 *  The highest priority (**0**). Use only in case of emergency.
+	 *  The highest priority. Use only in case of emergency.
 	 */
 	IDMAlertPriorityDEFCON	= 0,
 	
 	/**
-	 *  High priority for the alerts (**5**)
+	 *  High priority for the alerts
 	 */
-	IDMAlertPriorityHigh	= 5,
+	IDMAlertPriorityHigh	= 10,
 	
 	/**
-	 *  The default priority (**10**)
+	 *  The default priority
 	 */
-	IDMAlertPriorityMedium	= 10,
+	IDMAlertPriorityMedium	= 25,
 	
 	/**
-	 *  Low priority (**20**)
+	 *  Low priority
 	 */
-	IDMAlertPriorityLow		= 20
+	IDMAlertPriorityLow		= 50
 };
 
 /**
@@ -58,7 +58,7 @@ typedef NS_ENUM(NSUInteger, IDMAlertPriority)
 typedef NS_ENUM(NSInteger, IDMAlertError)
 {
 	/**
-	 *  Indicates that the alert failed because another with higher priority was popped.
+	 *  Indicates that the alert failed because another with higher priority was prompted.
 	 */
 	IDMAlertErrorHigherPriorityAlert
 };
@@ -103,7 +103,7 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  *  Shows the default connection error alert. This alert is displayed with the default priority `IDMAlertPriorityMedium`.
  *
  *  When dismissed, the `successBlock` is called with the index for the clicked button.
- *  If an alert with higher priority is popped, the `failureBlock` is called.
+ *  If an alert with higher priority is prompted, the `failureBlock` is called.
  *
  *  @param successBlock The block gets called when the user dismisses a `UIAlertView`. `Similar to alertView:clickedButtonAtIndex:`
  *
@@ -146,7 +146,7 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  *  Shows an alert with the given `title` and `text` and the default priority `IDMAlertPriorityMedium`.
  *
  *  When dismissed, the `successBlock` is called with the index for the clicked button.
- *  If an alert with higher priority is popped, the `failureBlock` is called.
+ *  If an alert with higher priority is prompted, the `failureBlock` is called.
  *
  *  @param title The UIAlertView title
  *  @param text  The UIAlertView text message
@@ -173,7 +173,7 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  *  Shows an alert with the given `title`, `text` and `priority`.
  *
  *  When dismissed, the `successBlock` is called with the index for the clicked button.
- *  If an alert with higher priority is popped, the `failureBlock` is called.
+ *  If an alert with higher priority is prompted, the `failureBlock` is called.
  *
  *  @param title The UIAlertView title
  *  @param text  The UIAlertView text message
@@ -201,7 +201,7 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  *  Shows an alert with the given `title`, `text`, `priority` and `otherButtons` for dismissing the UIAlertView.
  *
  *  When dismissed, the `successBlock` is called with the index for the clicked button.
- *  If an alert with higher priority is popped, the `failureBlock` is called.
+ *  If an alert with higher priority is prompted, the `failureBlock` is called.
  *
  *  @param title The UIAlertView title
  *  @param text  The UIAlertView text message

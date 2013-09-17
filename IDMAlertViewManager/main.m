@@ -2,7 +2,7 @@
 //  main.m
 //  IDMAlertViewManager
 //
-//  Created by Flavio Caetano on 9/5/13.
+//  Created by Flavio Caetano on 9/17/13.
 //  Copyright (c) 2013 Ideais. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 #import "AppDelegate.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char * argv[])
 {
 	@autoreleasepool {
 	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));

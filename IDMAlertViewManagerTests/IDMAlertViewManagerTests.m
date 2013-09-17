@@ -2,31 +2,33 @@
 //  IDMAlertViewManagerTests.m
 //  IDMAlertViewManagerTests
 //
-//  Created by Flavio Caetano on 9/5/13.
+//  Created by Flavio Caetano on 9/17/13.
 //  Copyright (c) 2013 Ideais. All rights reserved.
 //
 
-#import "IDMAlertViewManagerTests.h"
+#import <XCTest/XCTest.h>
+
+@interface IDMAlertViewManagerTests : XCTestCase
+
+@end
 
 @implementation IDMAlertViewManagerTests
 
 - (void)setUp
 {
     [super setUp];
-    
-    // Set-up code here.
+    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in IDMAlertViewManagerTests");
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
 @end

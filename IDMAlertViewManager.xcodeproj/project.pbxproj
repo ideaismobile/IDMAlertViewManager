@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		728CA59917D91276009854D7 /* Docs */ = {
+		72E39E6917E8CB2D00FCB895 /* Docs */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 728CA59C17D91276009854D7 /* Build configuration list for PBXAggregateTarget "Docs" */;
+			buildConfigurationList = 72E39E6C17E8CB2D00FCB895 /* Build configuration list for PBXAggregateTarget "Docs" */;
 			buildPhases = (
-				728CA59D17D91281009854D7 /* ShellScript */,
+				72E39E6D17E8CB9600FCB895 /* ShellScript */,
 			);
 			dependencies = (
 			);
@@ -21,174 +21,166 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		72754A4F17D8FB6D001A329A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72754A4E17D8FB6D001A329A /* UIKit.framework */; };
-		72754A5117D8FB6D001A329A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72754A5017D8FB6D001A329A /* Foundation.framework */; };
-		72754A5317D8FB6D001A329A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72754A5217D8FB6D001A329A /* CoreGraphics.framework */; };
-		72754A5917D8FB6D001A329A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72754A5717D8FB6D001A329A /* InfoPlist.strings */; };
-		72754A5B17D8FB6D001A329A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72754A5A17D8FB6D001A329A /* main.m */; };
-		72754A5F17D8FB6D001A329A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72754A5E17D8FB6D001A329A /* AppDelegate.m */; };
-		72754A6117D8FB6D001A329A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 72754A6017D8FB6D001A329A /* Default.png */; };
-		72754A6317D8FB6D001A329A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72754A6217D8FB6D001A329A /* Default@2x.png */; };
-		72754A6517D8FB6D001A329A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72754A6417D8FB6D001A329A /* Default-568h@2x.png */; };
-		72754A6D17D8FB6E001A329A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72754A6C17D8FB6E001A329A /* SenTestingKit.framework */; };
-		72754A6E17D8FB6E001A329A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72754A4E17D8FB6D001A329A /* UIKit.framework */; };
-		72754A6F17D8FB6E001A329A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72754A5017D8FB6D001A329A /* Foundation.framework */; };
-		72754A7717D8FB6E001A329A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72754A7517D8FB6E001A329A /* InfoPlist.strings */; };
-		72754A7A17D8FB6E001A329A /* IDMAlertViewManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72754A7917D8FB6E001A329A /* IDMAlertViewManagerTests.m */; };
-		72754A8617D8FB8E001A329A /* IDMAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 72754A8517D8FB8E001A329A /* IDMAlertViewManager.m */; };
+		72E39E3B17E8CADF00FCB895 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E39E3A17E8CADF00FCB895 /* Foundation.framework */; };
+		72E39E3D17E8CADF00FCB895 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E39E3C17E8CADF00FCB895 /* CoreGraphics.framework */; };
+		72E39E3F17E8CADF00FCB895 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E39E3E17E8CADF00FCB895 /* UIKit.framework */; };
+		72E39E4517E8CADF00FCB895 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72E39E4317E8CADF00FCB895 /* InfoPlist.strings */; };
+		72E39E4717E8CADF00FCB895 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E39E4617E8CADF00FCB895 /* main.m */; };
+		72E39E4B17E8CADF00FCB895 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E39E4A17E8CADF00FCB895 /* AppDelegate.m */; };
+		72E39E4D17E8CADF00FCB895 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E39E4C17E8CADF00FCB895 /* Images.xcassets */; };
+		72E39E5417E8CADF00FCB895 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E39E5317E8CADF00FCB895 /* XCTest.framework */; };
+		72E39E5517E8CADF00FCB895 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E39E3A17E8CADF00FCB895 /* Foundation.framework */; };
+		72E39E5617E8CADF00FCB895 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E39E3E17E8CADF00FCB895 /* UIKit.framework */; };
+		72E39E5E17E8CADF00FCB895 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72E39E5C17E8CADF00FCB895 /* InfoPlist.strings */; };
+		72E39E6017E8CADF00FCB895 /* IDMAlertViewManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E39E5F17E8CADF00FCB895 /* IDMAlertViewManagerTests.m */; };
+		72E39E7117E8CBAF00FCB895 /* IDMAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E39E7017E8CBAF00FCB895 /* IDMAlertViewManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		72754A7017D8FB6E001A329A /* PBXContainerItemProxy */ = {
+		72E39E5717E8CADF00FCB895 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 72754A4317D8FB6D001A329A /* Project object */;
+			containerPortal = 72E39E2F17E8CADF00FCB895 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 72754A4A17D8FB6D001A329A;
+			remoteGlobalIDString = 72E39E3617E8CADF00FCB895;
 			remoteInfo = IDMAlertViewManager;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		72754A4B17D8FB6D001A329A /* IDMAlertViewManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDMAlertViewManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		72754A4E17D8FB6D001A329A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		72754A5017D8FB6D001A329A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		72754A5217D8FB6D001A329A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		72754A5617D8FB6D001A329A /* IDMAlertViewManager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IDMAlertViewManager-Info.plist"; sourceTree = "<group>"; };
-		72754A5817D8FB6D001A329A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		72754A5A17D8FB6D001A329A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		72754A5C17D8FB6D001A329A /* IDMAlertViewManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IDMAlertViewManager-Prefix.pch"; sourceTree = "<group>"; };
-		72754A5D17D8FB6D001A329A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		72754A5E17D8FB6D001A329A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		72754A6017D8FB6D001A329A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		72754A6217D8FB6D001A329A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		72754A6417D8FB6D001A329A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		72754A6B17D8FB6E001A329A /* IDMAlertViewManagerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDMAlertViewManagerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		72754A6C17D8FB6E001A329A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		72754A7417D8FB6E001A329A /* IDMAlertViewManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IDMAlertViewManagerTests-Info.plist"; sourceTree = "<group>"; };
-		72754A7617D8FB6E001A329A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		72754A7817D8FB6E001A329A /* IDMAlertViewManagerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDMAlertViewManagerTests.h; sourceTree = "<group>"; };
-		72754A7917D8FB6E001A329A /* IDMAlertViewManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDMAlertViewManagerTests.m; sourceTree = "<group>"; };
-		72754A8417D8FB8E001A329A /* IDMAlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDMAlertViewManager.h; path = Classes/IDMAlertViewManager.h; sourceTree = "<group>"; };
-		72754A8517D8FB8E001A329A /* IDMAlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDMAlertViewManager.m; path = Classes/IDMAlertViewManager.m; sourceTree = "<group>"; };
+		72E39E3717E8CADF00FCB895 /* IDMAlertViewManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDMAlertViewManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		72E39E3A17E8CADF00FCB895 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		72E39E3C17E8CADF00FCB895 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		72E39E3E17E8CADF00FCB895 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		72E39E4217E8CADF00FCB895 /* IDMAlertViewManager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IDMAlertViewManager-Info.plist"; sourceTree = "<group>"; };
+		72E39E4417E8CADF00FCB895 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		72E39E4617E8CADF00FCB895 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		72E39E4817E8CADF00FCB895 /* IDMAlertViewManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IDMAlertViewManager-Prefix.pch"; sourceTree = "<group>"; };
+		72E39E4917E8CADF00FCB895 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		72E39E4A17E8CADF00FCB895 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		72E39E4C17E8CADF00FCB895 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		72E39E5217E8CADF00FCB895 /* IDMAlertViewManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDMAlertViewManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72E39E5317E8CADF00FCB895 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		72E39E5B17E8CADF00FCB895 /* IDMAlertViewManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IDMAlertViewManagerTests-Info.plist"; sourceTree = "<group>"; };
+		72E39E5D17E8CADF00FCB895 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		72E39E5F17E8CADF00FCB895 /* IDMAlertViewManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDMAlertViewManagerTests.m; sourceTree = "<group>"; };
+		72E39E6F17E8CBAF00FCB895 /* IDMAlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMAlertViewManager.h; sourceTree = "<group>"; };
+		72E39E7017E8CBAF00FCB895 /* IDMAlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMAlertViewManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		72754A4817D8FB6D001A329A /* Frameworks */ = {
+		72E39E3417E8CADF00FCB895 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72754A4F17D8FB6D001A329A /* UIKit.framework in Frameworks */,
-				72754A5117D8FB6D001A329A /* Foundation.framework in Frameworks */,
-				72754A5317D8FB6D001A329A /* CoreGraphics.framework in Frameworks */,
+				72E39E3D17E8CADF00FCB895 /* CoreGraphics.framework in Frameworks */,
+				72E39E3F17E8CADF00FCB895 /* UIKit.framework in Frameworks */,
+				72E39E3B17E8CADF00FCB895 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72754A6717D8FB6E001A329A /* Frameworks */ = {
+		72E39E4F17E8CADF00FCB895 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72754A6D17D8FB6E001A329A /* SenTestingKit.framework in Frameworks */,
-				72754A6E17D8FB6E001A329A /* UIKit.framework in Frameworks */,
-				72754A6F17D8FB6E001A329A /* Foundation.framework in Frameworks */,
+				72E39E5417E8CADF00FCB895 /* XCTest.framework in Frameworks */,
+				72E39E5617E8CADF00FCB895 /* UIKit.framework in Frameworks */,
+				72E39E5517E8CADF00FCB895 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		72754A4217D8FB6D001A329A = {
+		72E39E2E17E8CADF00FCB895 = {
 			isa = PBXGroup;
 			children = (
-				72754A8317D8FB7A001A329A /* Classes */,
-				72754A5417D8FB6D001A329A /* IDMAlertViewManager */,
-				72754A7217D8FB6E001A329A /* IDMAlertViewManagerTests */,
-				72754A4D17D8FB6D001A329A /* Frameworks */,
-				72754A4C17D8FB6D001A329A /* Products */,
+				72E39E6E17E8CBAF00FCB895 /* Classes */,
+				72E39E4017E8CADF00FCB895 /* IDMAlertViewManager */,
+				72E39E5917E8CADF00FCB895 /* IDMAlertViewManagerTests */,
+				72E39E3917E8CADF00FCB895 /* Frameworks */,
+				72E39E3817E8CADF00FCB895 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		72754A4C17D8FB6D001A329A /* Products */ = {
+		72E39E3817E8CADF00FCB895 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				72754A4B17D8FB6D001A329A /* IDMAlertViewManager.app */,
-				72754A6B17D8FB6E001A329A /* IDMAlertViewManagerTests.octest */,
+				72E39E3717E8CADF00FCB895 /* IDMAlertViewManager.app */,
+				72E39E5217E8CADF00FCB895 /* IDMAlertViewManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		72754A4D17D8FB6D001A329A /* Frameworks */ = {
+		72E39E3917E8CADF00FCB895 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				72754A4E17D8FB6D001A329A /* UIKit.framework */,
-				72754A5017D8FB6D001A329A /* Foundation.framework */,
-				72754A5217D8FB6D001A329A /* CoreGraphics.framework */,
-				72754A6C17D8FB6E001A329A /* SenTestingKit.framework */,
+				72E39E3A17E8CADF00FCB895 /* Foundation.framework */,
+				72E39E3C17E8CADF00FCB895 /* CoreGraphics.framework */,
+				72E39E3E17E8CADF00FCB895 /* UIKit.framework */,
+				72E39E5317E8CADF00FCB895 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		72754A5417D8FB6D001A329A /* IDMAlertViewManager */ = {
+		72E39E4017E8CADF00FCB895 /* IDMAlertViewManager */ = {
 			isa = PBXGroup;
 			children = (
-				72754A5D17D8FB6D001A329A /* AppDelegate.h */,
-				72754A5E17D8FB6D001A329A /* AppDelegate.m */,
-				72754A5517D8FB6D001A329A /* Supporting Files */,
+				72E39E4917E8CADF00FCB895 /* AppDelegate.h */,
+				72E39E4A17E8CADF00FCB895 /* AppDelegate.m */,
+				72E39E4C17E8CADF00FCB895 /* Images.xcassets */,
+				72E39E4117E8CADF00FCB895 /* Supporting Files */,
 			);
 			path = IDMAlertViewManager;
 			sourceTree = "<group>";
 		};
-		72754A5517D8FB6D001A329A /* Supporting Files */ = {
+		72E39E4117E8CADF00FCB895 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				72754A5617D8FB6D001A329A /* IDMAlertViewManager-Info.plist */,
-				72754A5717D8FB6D001A329A /* InfoPlist.strings */,
-				72754A5A17D8FB6D001A329A /* main.m */,
-				72754A5C17D8FB6D001A329A /* IDMAlertViewManager-Prefix.pch */,
-				72754A6017D8FB6D001A329A /* Default.png */,
-				72754A6217D8FB6D001A329A /* Default@2x.png */,
-				72754A6417D8FB6D001A329A /* Default-568h@2x.png */,
+				72E39E4217E8CADF00FCB895 /* IDMAlertViewManager-Info.plist */,
+				72E39E4317E8CADF00FCB895 /* InfoPlist.strings */,
+				72E39E4617E8CADF00FCB895 /* main.m */,
+				72E39E4817E8CADF00FCB895 /* IDMAlertViewManager-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		72754A7217D8FB6E001A329A /* IDMAlertViewManagerTests */ = {
+		72E39E5917E8CADF00FCB895 /* IDMAlertViewManagerTests */ = {
 			isa = PBXGroup;
 			children = (
-				72754A7817D8FB6E001A329A /* IDMAlertViewManagerTests.h */,
-				72754A7917D8FB6E001A329A /* IDMAlertViewManagerTests.m */,
-				72754A7317D8FB6E001A329A /* Supporting Files */,
+				72E39E5F17E8CADF00FCB895 /* IDMAlertViewManagerTests.m */,
+				72E39E5A17E8CADF00FCB895 /* Supporting Files */,
 			);
 			path = IDMAlertViewManagerTests;
 			sourceTree = "<group>";
 		};
-		72754A7317D8FB6E001A329A /* Supporting Files */ = {
+		72E39E5A17E8CADF00FCB895 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				72754A7417D8FB6E001A329A /* IDMAlertViewManagerTests-Info.plist */,
-				72754A7517D8FB6E001A329A /* InfoPlist.strings */,
+				72E39E5B17E8CADF00FCB895 /* IDMAlertViewManagerTests-Info.plist */,
+				72E39E5C17E8CADF00FCB895 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		72754A8317D8FB7A001A329A /* Classes */ = {
+		72E39E6E17E8CBAF00FCB895 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				72754A8417D8FB8E001A329A /* IDMAlertViewManager.h */,
-				72754A8517D8FB8E001A329A /* IDMAlertViewManager.m */,
+				72E39E6F17E8CBAF00FCB895 /* IDMAlertViewManager.h */,
+				72E39E7017E8CBAF00FCB895 /* IDMAlertViewManager.m */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		72754A4A17D8FB6D001A329A /* IDMAlertViewManager */ = {
+		72E39E3617E8CADF00FCB895 /* IDMAlertViewManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72754A7D17D8FB6E001A329A /* Build configuration list for PBXNativeTarget "IDMAlertViewManager" */;
+			buildConfigurationList = 72E39E6317E8CADF00FCB895 /* Build configuration list for PBXNativeTarget "IDMAlertViewManager" */;
 			buildPhases = (
-				72754A4717D8FB6D001A329A /* Sources */,
-				72754A4817D8FB6D001A329A /* Frameworks */,
-				72754A4917D8FB6D001A329A /* Resources */,
+				72E39E3317E8CADF00FCB895 /* Sources */,
+				72E39E3417E8CADF00FCB895 /* Frameworks */,
+				72E39E3517E8CADF00FCB895 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -196,93 +188,82 @@
 			);
 			name = IDMAlertViewManager;
 			productName = IDMAlertViewManager;
-			productReference = 72754A4B17D8FB6D001A329A /* IDMAlertViewManager.app */;
+			productReference = 72E39E3717E8CADF00FCB895 /* IDMAlertViewManager.app */;
 			productType = "com.apple.product-type.application";
 		};
-		72754A6A17D8FB6E001A329A /* IDMAlertViewManagerTests */ = {
+		72E39E5117E8CADF00FCB895 /* IDMAlertViewManagerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72754A8017D8FB6E001A329A /* Build configuration list for PBXNativeTarget "IDMAlertViewManagerTests" */;
+			buildConfigurationList = 72E39E6617E8CADF00FCB895 /* Build configuration list for PBXNativeTarget "IDMAlertViewManagerTests" */;
 			buildPhases = (
-				72754A6617D8FB6E001A329A /* Sources */,
-				72754A6717D8FB6E001A329A /* Frameworks */,
-				72754A6817D8FB6E001A329A /* Resources */,
-				72754A6917D8FB6E001A329A /* ShellScript */,
+				72E39E4E17E8CADF00FCB895 /* Sources */,
+				72E39E4F17E8CADF00FCB895 /* Frameworks */,
+				72E39E5017E8CADF00FCB895 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				72754A7117D8FB6E001A329A /* PBXTargetDependency */,
+				72E39E5817E8CADF00FCB895 /* PBXTargetDependency */,
 			);
 			name = IDMAlertViewManagerTests;
 			productName = IDMAlertViewManagerTests;
-			productReference = 72754A6B17D8FB6E001A329A /* IDMAlertViewManagerTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 72E39E5217E8CADF00FCB895 /* IDMAlertViewManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		72754A4317D8FB6D001A329A /* Project object */ = {
+		72E39E2F17E8CADF00FCB895 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Ideais;
+				TargetAttributes = {
+					72E39E5117E8CADF00FCB895 = {
+						TestTargetID = 72E39E3617E8CADF00FCB895;
+					};
+				};
 			};
-			buildConfigurationList = 72754A4617D8FB6D001A329A /* Build configuration list for PBXProject "IDMAlertViewManager" */;
+			buildConfigurationList = 72E39E3217E8CADF00FCB895 /* Build configuration list for PBXProject "IDMAlertViewManager" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 72754A4217D8FB6D001A329A;
-			productRefGroup = 72754A4C17D8FB6D001A329A /* Products */;
+			mainGroup = 72E39E2E17E8CADF00FCB895;
+			productRefGroup = 72E39E3817E8CADF00FCB895 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				72754A4A17D8FB6D001A329A /* IDMAlertViewManager */,
-				72754A6A17D8FB6E001A329A /* IDMAlertViewManagerTests */,
-				728CA59917D91276009854D7 /* Docs */,
+				72E39E3617E8CADF00FCB895 /* IDMAlertViewManager */,
+				72E39E5117E8CADF00FCB895 /* IDMAlertViewManagerTests */,
+				72E39E6917E8CB2D00FCB895 /* Docs */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		72754A4917D8FB6D001A329A /* Resources */ = {
+		72E39E3517E8CADF00FCB895 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72754A5917D8FB6D001A329A /* InfoPlist.strings in Resources */,
-				72754A6117D8FB6D001A329A /* Default.png in Resources */,
-				72754A6317D8FB6D001A329A /* Default@2x.png in Resources */,
-				72754A6517D8FB6D001A329A /* Default-568h@2x.png in Resources */,
+				72E39E4517E8CADF00FCB895 /* InfoPlist.strings in Resources */,
+				72E39E4D17E8CADF00FCB895 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72754A6817D8FB6E001A329A /* Resources */ = {
+		72E39E5017E8CADF00FCB895 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72754A7717D8FB6E001A329A /* InfoPlist.strings in Resources */,
+				72E39E5E17E8CADF00FCB895 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		72754A6917D8FB6E001A329A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		728CA59D17D91281009854D7 /* ShellScript */ = {
+		72E39E6D17E8CB9600FCB895 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -298,47 +279,47 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		72754A4717D8FB6D001A329A /* Sources */ = {
+		72E39E3317E8CADF00FCB895 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72754A5B17D8FB6D001A329A /* main.m in Sources */,
-				72754A5F17D8FB6D001A329A /* AppDelegate.m in Sources */,
-				72754A8617D8FB8E001A329A /* IDMAlertViewManager.m in Sources */,
+				72E39E4B17E8CADF00FCB895 /* AppDelegate.m in Sources */,
+				72E39E4717E8CADF00FCB895 /* main.m in Sources */,
+				72E39E7117E8CBAF00FCB895 /* IDMAlertViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72754A6617D8FB6E001A329A /* Sources */ = {
+		72E39E4E17E8CADF00FCB895 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72754A7A17D8FB6E001A329A /* IDMAlertViewManagerTests.m in Sources */,
+				72E39E6017E8CADF00FCB895 /* IDMAlertViewManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		72754A7117D8FB6E001A329A /* PBXTargetDependency */ = {
+		72E39E5817E8CADF00FCB895 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 72754A4A17D8FB6D001A329A /* IDMAlertViewManager */;
-			targetProxy = 72754A7017D8FB6E001A329A /* PBXContainerItemProxy */;
+			target = 72E39E3617E8CADF00FCB895 /* IDMAlertViewManager */;
+			targetProxy = 72E39E5717E8CADF00FCB895 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		72754A5717D8FB6D001A329A /* InfoPlist.strings */ = {
+		72E39E4317E8CADF00FCB895 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				72754A5817D8FB6D001A329A /* en */,
+				72E39E4417E8CADF00FCB895 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		72754A7517D8FB6E001A329A /* InfoPlist.strings */ = {
+		72E39E5C17E8CADF00FCB895 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				72754A7617D8FB6E001A329A /* en */,
+				72E39E5D17E8CADF00FCB895 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -346,17 +327,21 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		72754A7B17D8FB6E001A329A /* Debug */ = {
+		72E39E6117E8CADF00FCB895 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -368,45 +353,55 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		72754A7C17D8FB6E001A329A /* Release */ = {
+		72E39E6217E8CADF00FCB895 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		72754A7E17D8FB6E001A329A /* Debug */ = {
+		72E39E6417E8CADF00FCB895 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IDMAlertViewManager/IDMAlertViewManager-Prefix.pch";
 				INFOPLIST_FILE = "IDMAlertViewManager/IDMAlertViewManager-Info.plist";
@@ -415,9 +410,11 @@
 			};
 			name = Debug;
 		};
-		72754A7F17D8FB6E001A329A /* Release */ = {
+		72E39E6517E8CADF00FCB895 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IDMAlertViewManager/IDMAlertViewManager-Prefix.pch";
 				INFOPLIST_FILE = "IDMAlertViewManager/IDMAlertViewManager-Info.plist";
@@ -426,48 +423,54 @@
 			};
 			name = Release;
 		};
-		72754A8117D8FB6E001A329A /* Debug */ = {
+		72E39E6717E8CADF00FCB895 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IDMAlertViewManager.app/IDMAlertViewManager";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IDMAlertViewManager/IDMAlertViewManager-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "IDMAlertViewManagerTests/IDMAlertViewManagerTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		72754A8217D8FB6E001A329A /* Release */ = {
+		72E39E6817E8CADF00FCB895 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IDMAlertViewManager.app/IDMAlertViewManager";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IDMAlertViewManager/IDMAlertViewManager-Prefix.pch";
 				INFOPLIST_FILE = "IDMAlertViewManagerTests/IDMAlertViewManagerTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
-		728CA59A17D91276009854D7 /* Debug */ = {
+		72E39E6A17E8CB2D00FCB895 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		728CA59B17D91276009854D7 /* Release */ = {
+		72E39E6B17E8CB2D00FCB895 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -477,42 +480,42 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		72754A4617D8FB6D001A329A /* Build configuration list for PBXProject "IDMAlertViewManager" */ = {
+		72E39E3217E8CADF00FCB895 /* Build configuration list for PBXProject "IDMAlertViewManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72754A7B17D8FB6E001A329A /* Debug */,
-				72754A7C17D8FB6E001A329A /* Release */,
+				72E39E6117E8CADF00FCB895 /* Debug */,
+				72E39E6217E8CADF00FCB895 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72754A7D17D8FB6E001A329A /* Build configuration list for PBXNativeTarget "IDMAlertViewManager" */ = {
+		72E39E6317E8CADF00FCB895 /* Build configuration list for PBXNativeTarget "IDMAlertViewManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72754A7E17D8FB6E001A329A /* Debug */,
-				72754A7F17D8FB6E001A329A /* Release */,
+				72E39E6417E8CADF00FCB895 /* Debug */,
+				72E39E6517E8CADF00FCB895 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72754A8017D8FB6E001A329A /* Build configuration list for PBXNativeTarget "IDMAlertViewManagerTests" */ = {
+		72E39E6617E8CADF00FCB895 /* Build configuration list for PBXNativeTarget "IDMAlertViewManagerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72754A8117D8FB6E001A329A /* Debug */,
-				72754A8217D8FB6E001A329A /* Release */,
+				72E39E6717E8CADF00FCB895 /* Debug */,
+				72E39E6817E8CADF00FCB895 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		728CA59C17D91276009854D7 /* Build configuration list for PBXAggregateTarget "Docs" */ = {
+		72E39E6C17E8CB2D00FCB895 /* Build configuration list for PBXAggregateTarget "Docs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				728CA59A17D91276009854D7 /* Debug */,
-				728CA59B17D91276009854D7 /* Release */,
+				72E39E6A17E8CB2D00FCB895 /* Debug */,
+				72E39E6B17E8CB2D00FCB895 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 72754A4317D8FB6D001A329A /* Project object */;
+	rootObject = 72E39E2F17E8CADF00FCB895 /* Project object */;
 }
