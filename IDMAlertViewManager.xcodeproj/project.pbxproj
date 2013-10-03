@@ -47,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72597D3C17FDC71C00D33DF0 /* IDMAlertViewManager_Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDMAlertViewManager_Tests.h; sourceTree = "<group>"; };
 		72E39E3717E8CADF00FCB895 /* IDMAlertViewManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDMAlertViewManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E39E3A17E8CADF00FCB895 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		72E39E3C17E8CADF00FCB895 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,6 +150,7 @@
 			children = (
 				72E39E5F17E8CADF00FCB895 /* IDMAlertViewManagerTests.m */,
 				72E39E5A17E8CADF00FCB895 /* Supporting Files */,
+				72597D3C17FDC71C00D33DF0 /* IDMAlertViewManager_Tests.h */,
 			);
 			path = IDMAlertViewManagerTests;
 			sourceTree = "<group>";
@@ -514,6 +516,7 @@
 				72E39E6B17E8CB2D00FCB895 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
