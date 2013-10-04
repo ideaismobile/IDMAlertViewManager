@@ -92,6 +92,13 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  */
 + (void)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message otherButtons:(NSArray *)buttonsArray;
 
+/**
+ *  Changes the default message for the main dismissal button. If not set, the default value is "OK"
+ *
+ *  @param dismissButtonMessage The new text for the main dismissal button.
+ */
++ (void)setDefaultDismissalButton:(NSString *)dismissButtonMessage;
+
 #pragma mark - Displaying Alerts
 /** @name Displaying Alerts */
 

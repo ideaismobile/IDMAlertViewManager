@@ -37,7 +37,12 @@
 /**
  *  The text message for the default connection failure alert.
  */
-@property (nonatomic, strong) NSString *defaultConnectionFailureText;
+@property (nonatomic, strong) NSString *defaultConnectionFailureMessage;
+
+/**
+ *  The default text of the dismissal button. If not set, the default value is `OK`
+ */
+@property (nonatomic, strong) NSString *defaultDismissalButtonText;
 
 /**
  *  The "other buttons" array for dismissing the default connection failure alert.

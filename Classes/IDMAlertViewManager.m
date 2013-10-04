@@ -55,6 +55,11 @@ static dispatch_queue_t custom_queue;
 @property (nonatomic, strong) NSString *defaultConnectionFailureMessage;
 
 /**
+ *  The default text of the dismissal button. If not set, the default value is `OK`
+ */
+@property (nonatomic, strong) NSString *defaultDismissalButtonText;
+
+/**
  *  The "other buttons" array for dismissing the default connection failure alert.
  */
 @property (nonatomic, strong) NSArray *buttonsArray;
@@ -125,6 +130,7 @@ static dispatch_queue_t custom_queue;
 	{
 		[self clearVolatileProperties];
 		custom_queue = dispatch_queue_create("br.com.ideais.IDMAlertViewManagerQueue", NULL);
+		self.defaultDismissalButtonText = @"OK";
 	}
 	
 	return self;
@@ -146,6 +152,14 @@ static dispatch_queue_t custom_queue;
 	avm.defaultConnectionFailureTitle	= title;
 	avm.defaultConnectionFailureMessage	= message;
 	avm.buttonsArray					= buttonsArray;
+}
+
+// Changes the default message for the main dismissal button. If this mehod is not called, the message is `OK`
++ (void)setDefaultDismissalButton:(NSString *)dismissButtonMessage
+{
+	IDMAlertViewManager *avm = [IDMAlertViewManager sharedInstance];
+	
+	avm.defaultDismissalButtonText = dismissButtonMessage;
 }
 
 #pragma mark - Displaying Alerts
@@ -237,7 +251,7 @@ static dispatch_queue_t custom_queue;
 	avm.alertView.title		= title;
 	avm.alertView.message	= message;
 	
-	[avm.alertView addButtonWithTitle:@"OK"];
+	[avm.alertView addButtonWithTitle:avm.defaultDismissalButtonText];
 	for (NSString *buttonTitle in buttonsArray)
 	{
 		[avm.alertView addButtonWithTitle:buttonTitle];

@@ -94,6 +94,32 @@
 	XCTAssertTrue(self.shared.alertView.numberOfButtons == 1,					@"[1] %d", self.shared.alertView.numberOfButtons);
 }
 
+
+- (void)testSetDefaultDismissalButton
+{
+	// Setting properties
+	NSString *alertTitle		= @"title";
+	NSString *alertMessage		= @"message";
+	NSString *newDismisButton	= @"AnotherButton";
+	
+	[IDMAlertViewManager setDefaultConnectionErrorTitle:alertTitle message:alertMessage];
+	[IDMAlertViewManager showDefaultConnectionFailureAlert];
+	
+	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],		@"[%@] %@", alertTitle, self.shared.alertView.title);
+	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],	@"[%@] %@", alertMessage, self.shared.alertView.message);
+	XCTAssertTrue(self.shared.alertView.numberOfButtons == 1,					@"[1] %d", self.shared.alertView.numberOfButtons);
+	
+	// Changing the default text for the dismiss button
+	[IDMAlertViewManager dismiss:NO];
+	[IDMAlertViewManager setDefaultDismissalButton:newDismisButton];
+	[IDMAlertViewManager showDefaultConnectionFailureAlert];
+	
+	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],					@"[%@] %@", alertTitle, self.shared.alertView.title);
+	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],				@"[%@] %@", alertMessage, self.shared.alertView.message);
+	XCTAssertTrue(self.shared.alertView.numberOfButtons == 1,								@"[1] %d", self.shared.alertView.numberOfButtons);
+	XCTAssertTrue([self.shared.defaultDismissalButtonText isEqualToString:newDismisButton],	@"[%@] %@", newDismisButton, self.shared.defaultDismissalButtonText);
+}
+
 - (void)testShowDefaultConnectionFailureAlert
 {
 	// Setting properties
