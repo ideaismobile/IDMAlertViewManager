@@ -1,11 +1,11 @@
 IDMAlertViewManager [![Build Status](https://magnum.travis-ci.com/ideaismobile/IDMAlertViewManager.png?token=HgpLPTLpJGCu6X7AwRB1&branch=master)](https://magnum.travis-ci.com/ideaismobile/IDMAlertViewManager)
 ===================
 
-IDMAlertViewManager was developed to help you mitigate the problem of dealing with alerts with different priorities. It also focuses on having only one alert window being displayed at a time and centralizes default network error messages in one single class.
+IDMAlertViewManager was developed to help you mitigate the problem of dealing with alerts of different priorities. It also focuses on having only one alert window being displayed at a time and centralizes default network error messages in one single class.
 
 ## Installation
 
-Simply add `pod 'IDMALertViewManager'` to your Podfile. Alternatively you can also copy the files within the folder `Classes` to your project.
+Simply add `pod 'IDMAlertViewManager'` to your Podfile. Alternatively you can also copy the files within the folder `Classes` to your project.
 
 We recommend importing it in the project's `.pch` to ease access, but you may also import on every class using **UIAlertViewManager**
 
@@ -22,7 +22,7 @@ The first thing you may want to do is to set the default `title` and `message` f
 	[IDMAlertViewManager setDefaultConnectionErrorTitle:@"Network Connectivity Error" message:@"Couldn't reach the server. Please, try again." otherButtons:@[@"Nah! I'm fine!"]];
 ```
 
-To show the default alert window for connectivity error you must call `[IDMAlertViewManager showDefaultConnectionFailureAlert]`. Alternatively you can send blocks to be called on completion or error:
+To show the default alert window for connectivity error you must call `[IDMAlertViewManager showDefaultConnectionFailureAlert]`. Alternatively you can send blocks to be called on success or error:
 
 ``` objective-c
 	[IDMAlertViewManager showDefaultConnectionAlertWithSuccess:^(NSUInteger selectedIndex) {
@@ -34,34 +34,36 @@ To show the default alert window for connectivity error you must call `[IDMAlert
 	}];
 ```
 
-The default alert for connectivity error is always called with the default priority (`IDMAlertPriorityMedium`). IDMAlertViewManager always add an `OK` button as the default but you can change it if you must.
+The default alert for connectivity error is always called with the default priority (`IDMAlertPriorityMedium`). IDMAlertViewManager adds `OK` as the text for the default dismissal button but you can change it if you may.
 
 ### Other alerts
 
 The most complete method available is:
 
 ``` objective-c
-	[IDMAlertViewManager showAlertWithTitle:alertTitle message:alertMessage priority:IDMAlertPriorityHigh success:^(NSUInteger selectedIndex) {
+	[IDMAlertViewManager showAlertWithTitle:@"Title" message:@"Message" priority:IDMAlertPriorityHigh success:^(NSUInteger selectedIndex) {
 		// Do something after dismissing the alert
 	} failure:^(NSError *error) {
 		// Oops! Something went wrong!
-	} otherButtons:anotherButtons];
+	} otherButtons:@[@"Cancel"]];
 ```
 
 ### Priorities
 
-There are four main priorities, but any unsigned integer may be provided to assign a priority to an alert. The lower the value, the higher the priority.
+There are four main priorities, but any unsigned integer may be provided to set a priority to an alert. The lower the value, the higher the priority.
 
-If there's an alert on the screen and another with higher priority must be shown. The current alert will be dismissed calling its `errorBlock`, if any, and the new alert will get its place on the screen. There will only be one alert being shown at a time.
+If there's an alert on the screen and another with higher priority tries to appear, the current alert will be dismissed calling its `errorBlock` and the new alert will get its place on the screen. There will only be one alert being displayed at a time.
 
 If an alert with equal or lower priority tries to pop on top of an existing alert, it won't show up and its `errorBlock` will be called.
 
-These are the preset priorities from the enum:
+These are the preset priorities from the `IDMAlertPriority` enum:
 
-- **IDMAlertPriorityDEFCON** = 0: The highest priority. Use only in case of emergency.
-- **IDMAlertPriorityHigh** = 10: For important but not critical alerts.
-- **IDMAlertPriorityMedium** = 25: The default priority. If none is set, this is assigned. Used on the connectivity error alerts.
-- **IDMAlertPriorityLow** = 50: Low priority alerts.
+Priority | Value | Meaning
+---------|-------|--------
+**IDMAlertPriorityDEFCON** | 0 | The highest priority. Use only in case of emergency.
+**IDMAlertPriorityHigh** | 10 | For important but not critical alerts.
+**IDMAlertPriorityMedium** | 25 | The default priority. If none is set, this is assigned. Used on the connectivity error alerts.
+**IDMAlertPriorityLow** | 50 | Low priority alerts.
 
 You can check the [full documentation](http://ideaismobile.github.io/IDMAlertViewManager/docs) for more information.
 
