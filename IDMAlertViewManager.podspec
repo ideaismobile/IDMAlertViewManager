@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name         = "IDMAlertViewManager"
   s.version      = "1.0"
-  s.summary      = "An UIAlertView manager to handle different priorities alerts. Also terminates the problem of having multiple alerts being displayed above one another."
+  s.summary      = "Handles different priorities alerts and terminates the problem of multiple alerts being displayed at the same time."
   s.homepage     = "http://ideaismobile.github.io/IDMAlertViewManager/"
 
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.author       = { "Ideais Mobile" => "mobile@ideais.com.br" }
   s.source       = { 
-    :git => "git@github.com:ideaismobile/IDMAlertViewManager.git", 
+    :git => "https://github.com/ideaismobile/IDMAlertViewManager.git", 
     :tag => "1.0"
   }
 

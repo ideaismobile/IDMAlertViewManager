@@ -1,4 +1,4 @@
-IDMAlertViewManager [![Build Status](https://magnum.travis-ci.com/ideaismobile/IDMAlertViewManager.png?token=HgpLPTLpJGCu6X7AwRB1&branch=master)](https://magnum.travis-ci.com/ideaismobile/IDMAlertViewManager)
+IDMAlertViewManager [![IDMAlertViewManager Version](http://cocoapod-badges.herokuapp.com/v/IDMAlertViewManager/badge.png)](http://cocoadocs.org/docsets/IDMAlertViewManager) [![IDMAlertViewManager Platforms](http://cocoapod-badges.herokuapp.com/p/IDMAlertViewManager/badge.svg)](http://cocoadocs.org/docsets/IDMAlertViewManager) [![Build Status](https://magnum.travis-ci.com/ideaismobile/IDMAlertViewManager.png?token=HgpLPTLpJGCu6X7AwRB1&branch=master)](https://magnum.travis-ci.com/ideaismobile/IDMAlertViewManager)
 ===================
 
 IDMAlertViewManager was developed to help you mitigate the problem of dealing with alerts of different priorities. It also focuses on having only one alert window being displayed at a time and centralizes default network error messages in one single class.
