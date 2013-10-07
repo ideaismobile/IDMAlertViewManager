@@ -241,6 +241,11 @@ static IDMAlertViewManager *_sharedInstance;
 	
 	avm.alertView.title		= title;
 	avm.alertView.message	= message;
+    
+    if (buttonsArray == nil || buttonsArray.count == 0)
+    {
+        buttonsArray = @[avm.defaultDismissalButtonText];
+    }
 	
 	for (NSString *buttonTitle in buttonsArray)
 	{
