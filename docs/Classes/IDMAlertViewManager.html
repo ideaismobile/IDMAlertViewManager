@@ -45,9 +45,11 @@
 	
 	<option value="//api/name/currentPriority">&nbsp;&nbsp;&nbsp;&nbsp;currentPriority</option>
 	
-	<option value="//api/name/defaultConnectionFailureText">&nbsp;&nbsp;&nbsp;&nbsp;defaultConnectionFailureText</option>
+	<option value="//api/name/defaultConnectionFailureMessage">&nbsp;&nbsp;&nbsp;&nbsp;defaultConnectionFailureMessage</option>
 	
 	<option value="//api/name/defaultConnectionFailureTitle">&nbsp;&nbsp;&nbsp;&nbsp;defaultConnectionFailureTitle</option>
+	
+	<option value="//api/name/defaultDismissalButtonText">&nbsp;&nbsp;&nbsp;&nbsp;defaultDismissalButtonText</option>
 	
 	<option value="//api/name/failureBlock">&nbsp;&nbsp;&nbsp;&nbsp;failureBlock</option>
 	
@@ -66,7 +68,9 @@
 	
 	<option value="//api/name/setDefaultConnectionErrorTitle:message:">&nbsp;&nbsp;&nbsp;&nbsp;+ setDefaultConnectionErrorTitle:message:</option>
 	
-	<option value="//api/name/setDefaultConnectionErrorTitle:message:otherButtons:">&nbsp;&nbsp;&nbsp;&nbsp;+ setDefaultConnectionErrorTitle:message:otherButtons:</option>
+	<option value="//api/name/setDefaultConnectionErrorTitle:message:buttons:">&nbsp;&nbsp;&nbsp;&nbsp;+ setDefaultConnectionErrorTitle:message:buttons:</option>
+	
+	<option value="//api/name/setDefaultDismissalButton:">&nbsp;&nbsp;&nbsp;&nbsp;+ setDefaultDismissalButton:</option>
 	
 	<option value="//api/name/sharedInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedInstance</option>
 	
@@ -76,7 +80,7 @@
 	
 	<option value="//api/name/showAlertWithTitle:message:priority:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ showAlertWithTitle:message:priority:success:failure:</option>
 	
-	<option value="//api/name/showAlertWithTitle:message:priority:success:failure:otherButtons:">&nbsp;&nbsp;&nbsp;&nbsp;+ showAlertWithTitle:message:priority:success:failure:otherButtons:</option>
+	<option value="//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">&nbsp;&nbsp;&nbsp;&nbsp;+ showAlertWithTitle:message:priority:success:failure:buttons:</option>
 	
 	<option value="//api/name/showAlertWithTitle:message:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ showAlertWithTitle:message:success:failure:</option>
 	
@@ -133,9 +137,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentPriority">currentPriority</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultConnectionFailureText">defaultConnectionFailureText</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultConnectionFailureMessage">defaultConnectionFailureMessage</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultConnectionFailureTitle">defaultConnectionFailureTitle</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultDismissalButtonText">defaultDismissalButtonText</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/failureBlock">failureBlock</a></span></li>
 	
@@ -155,7 +161,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDefaultConnectionErrorTitle:message:">setDefaultConnectionErrorTitle:message:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDefaultConnectionErrorTitle:message:otherButtons:">setDefaultConnectionErrorTitle:message:otherButtons:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDefaultConnectionErrorTitle:message:buttons:">setDefaultConnectionErrorTitle:message:buttons:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDefaultDismissalButton:">setDefaultDismissalButton:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedInstance">sharedInstance</a></span></li>
 	
@@ -165,7 +173,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:">showAlertWithTitle:message:priority:success:failure:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:otherButtons:">showAlertWithTitle:message:priority:success:failure:otherButtons:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">showAlertWithTitle:message:priority:success:failure:buttons:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showAlertWithTitle:message:success:failure:">showAlertWithTitle:message:success:failure:</a></span></li>
 	
@@ -255,7 +263,13 @@ If comes an alert with higher priority than the visible one, the old is dismisse
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setDefaultConnectionErrorTitle:message:otherButtons:">+&nbsp;setDefaultConnectionErrorTitle:message:otherButtons:</a></code>
+		<code><a href="#//api/name/setDefaultConnectionErrorTitle:message:buttons:">+&nbsp;setDefaultConnectionErrorTitle:message:buttons:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDefaultDismissalButton:">+&nbsp;setDefaultDismissalButton:</a></code>
 	</span>
 	
 	
@@ -305,7 +319,7 @@ If comes an alert with higher priority than the visible one, the old is dismisse
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:otherButtons:">+&nbsp;showAlertWithTitle:message:priority:success:failure:otherButtons:</a></code>
+		<code><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">+&nbsp;showAlertWithTitle:message:priority:success:failure:buttons:</a></code>
 	</span>
 	
 	
@@ -357,7 +371,13 @@ If comes an alert with higher priority than the visible one, the old is dismisse
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/defaultConnectionFailureText">&nbsp;&nbsp;defaultConnectionFailureText</a></code>
+		<code><a href="#//api/name/defaultConnectionFailureMessage">&nbsp;&nbsp;defaultConnectionFailureMessage</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultDismissalButtonText">&nbsp;&nbsp;defaultDismissalButtonText</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -552,8 +572,8 @@ If comes an alert with higher priority than the visible one, the old is dismisse
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/defaultConnectionFailureText" title="defaultConnectionFailureText"></a>
-	<h3 class="subsubtitle method-title">defaultConnectionFailureText</h3>
+	<a name="//api/name/defaultConnectionFailureMessage" title="defaultConnectionFailureMessage"></a>
+	<h3 class="subsubtitle method-title">defaultConnectionFailureMessage</h3>
 	
 	
 	
@@ -563,7 +583,7 @@ If comes an alert with higher priority than the visible one, the old is dismisse
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *defaultConnectionFailureText</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *defaultConnectionFailureMessage</code></div>
 
     
 	
@@ -634,6 +654,47 @@ If comes an alert with higher priority than the visible one, the old is dismisse
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/defaultDismissalButtonText" title="defaultDismissalButtonText"></a>
+	<h3 class="subsubtitle method-title">defaultDismissalButtonText</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The default text of the dismissal button. If not set, the default value is <code>OK</code></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *defaultDismissalButtonText</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The default text of the dismissal button. If not set, the default value is <code>OK</code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/failureBlock" title="failureBlock"></a>
 	<h3 class="subsubtitle method-title">failureBlock</h3>
 	
@@ -681,7 +742,7 @@ If comes an alert with higher priority than the visible one, the old is dismisse
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Indicates if the current alert view is visible. Necessary because [UIAlertView show] might be called, but it&rsquo;s <code>isVisible</code> is yet <code>NO</code>.</p>
+		<p>Indicates if the current alert view is visible. Necessary because <code>[UIAlertView show]</code> might be called, but it&rsquo;s <code>isVisible</code> is yet <code>NO</code>.</p>
 	</div>		
 	
     
@@ -698,7 +759,7 @@ If comes an alert with higher priority than the visible one, the old is dismisse
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Indicates if the current alert view is visible. Necessary because [UIAlertView show] might be called, but it&rsquo;s <code>isVisible</code> is yet <code>NO</code>.</p>
+		<p>Indicates if the current alert view is visible. Necessary because <code>[UIAlertView show]</code> might be called, but it&rsquo;s <code>isVisible</code> is yet <code>NO</code>.</p>
 	</div>
 	
 	
@@ -913,8 +974,8 @@ If comes an alert with higher priority than the visible one, the old is dismisse
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/setDefaultConnectionErrorTitle:message:otherButtons:" title="setDefaultConnectionErrorTitle:message:otherButtons:"></a>
-	<h3 class="subsubtitle method-title">setDefaultConnectionErrorTitle:message:otherButtons:</h3>
+	<a name="//api/name/setDefaultConnectionErrorTitle:message:buttons:" title="setDefaultConnectionErrorTitle:message:buttons:"></a>
+	<h3 class="subsubtitle method-title">setDefaultConnectionErrorTitle:message:buttons:</h3>
 	
 	
 	
@@ -924,7 +985,7 @@ If comes an alert with higher priority than the visible one, the old is dismisse
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)setDefaultConnectionErrorTitle:(NSString *)<em>title</em> message:(NSString *)<em>message</em> otherButtons:(NSArray *)<em>buttonsArray</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)setDefaultConnectionErrorTitle:(NSString *)<em>title</em> message:(NSString *)<em>message</em> buttons:(NSArray *)<em>buttonsArray</em></code></div>
 
     
 	
@@ -957,6 +1018,57 @@ If comes an alert with higher priority than the visible one, the old is dismisse
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Sets the title, message and dismiss buttons for the default connection failure alert.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDefaultDismissalButton:" title="setDefaultDismissalButton:"></a>
+	<h3 class="subsubtitle method-title">setDefaultDismissalButton:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Changes the default message for the main dismissal button. If not set, the default value is &ldquo;OK&rdquo;</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setDefaultDismissalButton:(NSString *)<em>dismissButtonMessage</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dismissButtonMessage</em></dt>
+			<dd><p>The new text for the main dismissal button.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Changes the default message for the main dismissal button. If not set, the default value is &ldquo;OK&rdquo;</p>
 	</div>
 	
 	
@@ -1066,7 +1178,7 @@ If comes an alert with higher priority than the visible one, the old is dismisse
 			
 			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:">+ showAlertWithTitle:message:priority:</a></p></code></li>
 			
-			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:otherButtons:">+ showAlertWithTitle:message:priority:success:failure:otherButtons:</a></p></code></li>
+			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">+ showAlertWithTitle:message:priority:success:failure:buttons:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -1136,7 +1248,7 @@ If comes an alert with higher priority than the visible one, the old is dismisse
 		<h4 class="method-subtitle">See Also</h4>
 		<ul>
 			
-			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:otherButtons:">+ showAlertWithTitle:message:priority:success:failure:otherButtons:</a></p></code></li>
+			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">+ showAlertWithTitle:message:priority:success:failure:buttons:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -1231,7 +1343,7 @@ If an alert with higher priority is prompted, the <a href="#//api/name/failureBl
 			
 			<li><code><p><a href="../Constants/IDMAlertError.html">IDMAlertError</a></p></code></li>
 			
-			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:otherButtons:">+ showAlertWithTitle:message:priority:success:failure:otherButtons:</a></p></code></li>
+			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">+ showAlertWithTitle:message:priority:success:failure:buttons:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -1247,18 +1359,18 @@ If an alert with higher priority is prompted, the <a href="#//api/name/failureBl
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/showAlertWithTitle:message:priority:success:failure:otherButtons:" title="showAlertWithTitle:message:priority:success:failure:otherButtons:"></a>
-	<h3 class="subsubtitle method-title">showAlertWithTitle:message:priority:success:failure:otherButtons:</h3>
+	<a name="//api/name/showAlertWithTitle:message:priority:success:failure:buttons:" title="showAlertWithTitle:message:priority:success:failure:buttons:"></a>
+	<h3 class="subsubtitle method-title">showAlertWithTitle:message:priority:success:failure:buttons:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Shows an alert with the given <code>title</code>, <code>message</code>, <code>priority</code> and <code>otherButtons</code> for dismissing the UIAlertView.</p>
+		<p>Shows an alert with the given <code>title</code>, <code>message</code>, <code>priority</code> and <code>buttons</code> for dismissing the UIAlertView.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)showAlertWithTitle:(NSString *)<em>title</em> message:(NSString *)<em>message</em> priority:(IDMAlertPriority)<em>priority</em> success:(IDMAlertViewSuccessBlock)<em>successBlock</em> failure:(IDMAlertViewFailureBlock)<em>failureBlock</em> otherButtons:(NSArray *)<em>buttonsArray</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)showAlertWithTitle:(NSString *)<em>title</em> message:(NSString *)<em>message</em> priority:(IDMAlertPriority)<em>priority</em> success:(IDMAlertViewSuccessBlock)<em>successBlock</em> failure:(IDMAlertViewFailureBlock)<em>failureBlock</em> buttons:(NSArray *)<em>buttonsArray</em></code></div>
 
     
 	
@@ -1315,7 +1427,7 @@ If an alert with higher priority is prompted, the <a href="#//api/name/failureBl
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Shows an alert with the given <code>title</code>, <code>message</code>, <code>priority</code> and <code>otherButtons</code> for dismissing the UIAlertView.</p>
+		<p>Shows an alert with the given <code>title</code>, <code>message</code>, <code>priority</code> and <code>buttons</code> for dismissing the UIAlertView.</p>
 
 <p>When dismissed, the <a href="#//api/name/successBlock"><code>successBlock</code></a> is called with the index for the clicked button.
 If an alert with higher priority is prompted, the <a href="#//api/name/failureBlock"><code>failureBlock</code></a> is called.</p>
@@ -1421,7 +1533,7 @@ If an alert with higher priority is prompted, the <a href="#//api/name/failureBl
 			
 			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:">+ showAlertWithTitle:message:priority:success:failure:</a></p></code></li>
 			
-			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:otherButtons:">+ showAlertWithTitle:message:priority:success:failure:otherButtons:</a></p></code></li>
+			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">+ showAlertWithTitle:message:priority:success:failure:buttons:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -1503,7 +1615,7 @@ If an alert with higher priority is prompted, the <a href="#//api/name/failureBl
 			
 			<li><code><p><a href="#//api/name/setDefaultConnectionErrorTitle:message:">+ setDefaultConnectionErrorTitle:message:</a></p></code></li>
 			
-			<li><code><p><a href="#//api/name/setDefaultConnectionErrorTitle:message:otherButtons:">+ setDefaultConnectionErrorTitle:message:otherButtons:</a></p></code></li>
+			<li><code><p><a href="#//api/name/setDefaultConnectionErrorTitle:message:buttons:">+ setDefaultConnectionErrorTitle:message:buttons:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -1555,7 +1667,7 @@ If an alert with higher priority is prompted, the <a href="#//api/name/failureBl
 			
 			<li><code><p><a href="#//api/name/setDefaultConnectionErrorTitle:message:">+ setDefaultConnectionErrorTitle:message:</a></p></code></li>
 			
-			<li><code><p><a href="#//api/name/setDefaultConnectionErrorTitle:message:otherButtons:">+ setDefaultConnectionErrorTitle:message:otherButtons:</a></p></code></li>
+			<li><code><p><a href="#//api/name/setDefaultConnectionErrorTitle:message:buttons:">+ setDefaultConnectionErrorTitle:message:buttons:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -1767,7 +1879,7 @@ If an alert with higher priority is prompted, the <a href="#//api/name/failureBl
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Ideais Mobile. All rights reserved. (Last updated: 2013-10-03)</span><br />
+						<p><span class="copyright">&copy; 2013 Ideais Mobile. All rights reserved. (Last updated: 2013-10-07)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						
