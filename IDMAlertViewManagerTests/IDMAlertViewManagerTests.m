@@ -172,7 +172,7 @@
 	
 	// Showing an alert
 	[IDMAlertViewManager showAlertWithTitle:alertTitle message:alertMessage];
-	XCTAssertTrue(self.shared.isAlertViewVisible, @"[1] %d", self.shared.isAlertViewVisible);
+	XCTAssertTrue(self.shared.isAlertViewVisible,								@"[1] %d", self.shared.isAlertViewVisible);
 	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],		@"[%@] %@", alertTitle, self.shared.alertView.title);
 	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],	@"[%@] %@", alertMessage, self.shared.alertView.message);
 	[IDMAlertViewManager dismiss:NO];
@@ -198,7 +198,7 @@
 	
 	// Showing an alert
 	[IDMAlertViewManager showAlertWithTitle:alertTitle message:alertMessage priority:IDMAlertPriorityLow];
-	XCTAssertTrue(self.shared.isAlertViewVisible, @"[1] %d", self.shared.isAlertViewVisible);
+	XCTAssertTrue(self.shared.isAlertViewVisible,								@"[1] %d", self.shared.isAlertViewVisible);
 	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],		@"[%@] %@", alertTitle, self.shared.alertView.title);
 	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],	@"[%@] %@", alertMessage, self.shared.alertView.message);
 	[IDMAlertViewManager dismiss:NO];
@@ -213,7 +213,7 @@
 	// Tries to show a high priority alert with the default already up
 	[IDMAlertViewManager showDefaultConnectionFailureAlert];
 	[IDMAlertViewManager showAlertWithTitle:alertTitle message:alertMessage priority:IDMAlertPriorityHigh];
-	XCTAssertTrue(self.shared.isAlertViewVisible, @"[1] %d", self.shared.isAlertViewVisible);
+	XCTAssertTrue(self.shared.isAlertViewVisible,								@"[1] %d", self.shared.isAlertViewVisible);
 	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],		@"[%@] %@", alertTitle, self.shared.alertView.title);
 	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],	@"[%@] %@", alertMessage, self.shared.alertView.message);
 	
@@ -241,7 +241,7 @@
 		XCTAssertFalse(YES, @"Shouldn't throw error");
 	}];
 	
-	XCTAssertTrue(self.shared.isAlertViewVisible, @"[1] %d", self.shared.isAlertViewVisible);
+	XCTAssertTrue(self.shared.isAlertViewVisible,								@"[1] %d", self.shared.isAlertViewVisible);
 	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],		@"[%@] %@", alertTitle, self.shared.alertView.title);
 	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],	@"[%@] %@", alertMessage, self.shared.alertView.message);
 	
@@ -276,7 +276,7 @@
 		XCTAssertTrue(error.code == IDMAlertErrorHigherPriorityAlert, @"[%d] %d", IDMAlertErrorHigherPriorityAlert, error.code);
 	}];
 	
-	XCTAssertTrue(self.shared.isAlertViewVisible, @"[1] %d", self.shared.isAlertViewVisible);
+	XCTAssertTrue(self.shared.isAlertViewVisible,								@"[1] %d", self.shared.isAlertViewVisible);
 	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],		@"[%@] %@", alertTitle, self.shared.alertView.title);
 	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],	@"[%@] %@", alertMessage, self.shared.alertView.message);
 	

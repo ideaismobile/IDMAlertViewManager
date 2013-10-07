@@ -20,11 +20,6 @@
  */
 static IDMAlertViewManager *_sharedInstance;
 
-/**
- *  The queue to run blocks
- */
-static dispatch_queue_t custom_queue;
-
 @interface IDMAlertViewManager ()
 
 #pragma mark - Properties
@@ -129,7 +124,6 @@ static dispatch_queue_t custom_queue;
 	if (self = [super init])
 	{
 		[self clearVolatileProperties];
-		custom_queue = dispatch_queue_create("br.com.ideais.IDMAlertViewManagerQueue", NULL);
 		self.defaultDismissalButtonText = @"OK";
 	}
 	
@@ -233,11 +227,8 @@ static dispatch_queue_t custom_queue;
 	{
 		if (failureBlock)
 		{
-			__block IDMAlertPriority currentPriority = avm.currentPriority;
-			dispatch_async(custom_queue, ^{
-				NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kHIGHER_ALERT_MESSAGE, currentPriority] code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
-				failureBlock(error);
-			});
+			NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kHIGHER_ALERT_MESSAGE, avm.currentPriority] code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
+			failureBlock(error);
 		}
 		
 		return;
@@ -276,10 +267,7 @@ static dispatch_queue_t custom_queue;
 {
 	if (self.successBlock)
 	{
-		__block IDMAlertViewSuccessBlock successBlock = self.successBlock;
-		dispatch_async(custom_queue, ^{
-			successBlock(buttonIndex);
-		});
+		self.successBlock(buttonIndex);
 	}
 	
 	[self clearVolatileProperties];
@@ -289,11 +277,8 @@ static dispatch_queue_t custom_queue;
 {
 	if (self.failureBlock && buttonIndex == kFAILED_DISMISS_INDEX)
 	{
-		__block IDMAlertViewFailureBlock failureBlock = self.failureBlock;
-		dispatch_async(custom_queue, ^{
-			NSError *error = [[NSError alloc] initWithDomain:kFAILED_DISMISS_MESSAGE code:IDMAlertErrorFailedDismiss userInfo:nil];
-			failureBlock(error);
-		});
+		NSError *error = [[NSError alloc] initWithDomain:kFAILED_DISMISS_MESSAGE code:IDMAlertErrorFailedDismiss userInfo:nil];
+		self.failureBlock(error);
 	}
 }
 
@@ -328,12 +313,8 @@ static dispatch_queue_t custom_queue;
 		
 		if (self.failureBlock)
 		{
-			__block IDMAlertViewFailureBlock failureBlock	= self.failureBlock;
-			__block IDMAlertPriority currentPriority		= self.currentPriority;
-			dispatch_async(custom_queue, ^{
-				NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kHIGHER_ALERT_MESSAGE, currentPriority] code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
-				failureBlock(error);
-			});
+			NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kHIGHER_ALERT_MESSAGE, self.currentPriority] code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
+			self.failureBlock(error);
 		}
 		
 		[self clearVolatileProperties];
