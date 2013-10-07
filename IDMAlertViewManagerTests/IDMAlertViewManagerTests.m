@@ -347,11 +347,13 @@
 	XCTAssertFalse(self.shared.alertView.numberOfButtons == anotherButtons.count,	@"[%d] %d", anotherButtons.count, self.shared.alertView.numberOfButtons);
 	
 	// Showing an alert with higher priority
-	[IDMAlertViewManager showAlertWithTitle:alertTitle message:alertMessage priority:IDMAlertPriorityHigh success:^(NSUInteger selectedIndex) {
-		XCTAssertTrue(dismissed, @"Run success block before dismissing");
-	} failure:^(NSError *error) {
-		XCTAssertFalse(YES, @"Shouldn't throw error");
-	} buttons:anotherButtons];
+	[IDMAlertViewManager showAlertWithTitle:alertTitle
+									message:alertMessage
+								   priority:IDMAlertPriorityHigh success:^(NSUInteger selectedIndex) {
+									   XCTAssertTrue(dismissed, @"Run success block before dismissing");
+								   } failure:^(NSError *error) {
+									   XCTAssertFalse(YES, @"Shouldn't throw error");
+								   } buttons:anotherButtons];
 	
 	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],			@"[%@] %@", alertTitle, self.shared.alertView.title);
 	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],		@"[%@] %@", alertMessage, self.shared.alertView.message);

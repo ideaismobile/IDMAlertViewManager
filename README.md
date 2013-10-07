@@ -16,22 +16,25 @@ IDMAlertViewManager completely overrides the use of UIAlertView. In fact, you sh
 The first thing you may want to do is to set the default `title` and `message` for the connectivity error alert. Append it to the bottom of your `applicationDidFinishLaunching:` from your `AppDelegate`:
 
 ``` objective-c
-	[IDMAlertViewManager setDefaultConnectionErrorTitle:@"Network Connectivity Error" message:@"Couldn't reach the server. Please, try again."];
+[IDMAlertViewManager setDefaultConnectionErrorTitle:@"Network Connectivity Error" 
+                                            message:@"Couldn't reach the server. Please, try again."];
 	
-	// You may also want to provide other buttons to dismiss the window:
-	[IDMAlertViewManager setDefaultConnectionErrorTitle:@"Network Connectivity Error" message:@"Couldn't reach the server. Please, try again." buttons:@[@"Nah! I'm fine!"]];
+// You may also want to provide other buttons to dismiss the window:
+[IDMAlertViewManager setDefaultConnectionErrorTitle:@"Network Connectivity Error" 
+                                            message:@"Couldn't reach the server. Please, try again."
+                                            buttons:@[@"Nah! I'm fine!"]];
 ```
 
 To show the default alert window for connectivity error you must call `[IDMAlertViewManager showDefaultConnectionFailureAlert]`. Alternatively you can send blocks to be called on success or error:
 
 ``` objective-c
-	[IDMAlertViewManager showDefaultConnectionAlertWithSuccess:^(NSUInteger selectedIndex) {
-		// Something to do when the user dismisses the alert view
-	} failure:^(NSError *error) {
-		// Usually called when another alert with higher priority must appear.
-		// May also mean that the alert was dismissed programmatically.
-		// You can find the error cause checking its code from the enum IDMAlertError
-	}];
+[IDMAlertViewManager showDefaultConnectionAlertWithSuccess:^(NSUInteger selectedIndex) {
+	// Something to do when the user dismisses the alert view
+} failure:^(NSError *error) {
+	// Usually called when another alert with higher priority must appear.
+	// May also mean that the alert was dismissed programmatically.
+	// You can find the error cause checking its code from the enum IDMAlertError
+}];
 ```
 
 The default alert for connectivity error is always called with the default priority (`IDMAlertPriorityMedium`). IDMAlertViewManager adds `OK` as the text for the default dismissal button but you can change it if you may.
@@ -40,12 +43,15 @@ The default alert for connectivity error is always called with the default prior
 
 The most complete method available is:
 
-``` objective-c
-	[IDMAlertViewManager showAlertWithTitle:@"Title" message:@"Message" priority:IDMAlertPriorityHigh success:^(NSUInteger selectedIndex) {
-		// Do something after dismissing the alert
-	} failure:^(NSError *error) {
-		// Oops! Something went wrong!
-	} buttons:@[@"Yes", @"No"]];
+``` objective-c									   
+[IDMAlertViewManager showAlertWithTitle:@"Title"
+                                message:@"Message"
+                               priority:IDMAlertPriorityHigh
+                                success:^(NSUInteger selectedIndex) {
+                                	// Do something after dismissing the alert
+                              } failure:^(NSError *error) {
+                              		// Oops! Something went wrong!
+                              } buttons:@[@"Yes", @"No"]];
 ```
 
 ### Priorities
