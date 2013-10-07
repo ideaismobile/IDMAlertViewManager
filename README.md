@@ -19,7 +19,7 @@ The first thing you may want to do is to set the default `title` and `message` f
 	[IDMAlertViewManager setDefaultConnectionErrorTitle:@"Network Connectivity Error" message:@"Couldn't reach the server. Please, try again."];
 	
 	// You may also want to provide other buttons to dismiss the window:
-	[IDMAlertViewManager setDefaultConnectionErrorTitle:@"Network Connectivity Error" message:@"Couldn't reach the server. Please, try again." otherButtons:@[@"Nah! I'm fine!"]];
+	[IDMAlertViewManager setDefaultConnectionErrorTitle:@"Network Connectivity Error" message:@"Couldn't reach the server. Please, try again." buttons:@[@"Nah! I'm fine!"]];
 ```
 
 To show the default alert window for connectivity error you must call `[IDMAlertViewManager showDefaultConnectionFailureAlert]`. Alternatively you can send blocks to be called on success or error:
@@ -45,7 +45,7 @@ The most complete method available is:
 		// Do something after dismissing the alert
 	} failure:^(NSError *error) {
 		// Oops! Something went wrong!
-	} otherButtons:@[@"Cancel"]];
+	} buttons:@[@"Yes", @"No"]];
 ```
 
 ### Priorities

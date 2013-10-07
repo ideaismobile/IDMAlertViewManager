@@ -90,7 +90,7 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  *  @param message      The UIAlertView text message
  *  @param buttonsArray A NSArray of NSStrings with dismiss buttons for the UIAlertView
  */
-+ (void)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message otherButtons:(NSArray *)buttonsArray;
++ (void)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message buttons:(NSArray *)buttonsArray;
 
 /**
  *  Changes the default message for the main dismissal button. If not set, the default value is "OK"
@@ -234,7 +234,7 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
 				  priority:(IDMAlertPriority)priority
 				   success:(IDMAlertViewSuccessBlock)successBlock
 				   failure:(IDMAlertViewFailureBlock)failureBlock
-			  otherButtons:(NSArray *)buttonsArray;
+				   buttons:(NSArray *)buttonsArray;
 
 #pragma mark - Dismissing Alerts
 /** @name Dismissing Alerts */

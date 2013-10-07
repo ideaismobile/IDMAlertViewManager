@@ -68,21 +68,21 @@
 	
 	// Setting buttons keeping the alert's title and message
 	[IDMAlertViewManager dismiss:NO];
-	[IDMAlertViewManager setDefaultConnectionErrorTitle:alertTitle message:alertMessage otherButtons:alertButtons];
+	[IDMAlertViewManager setDefaultConnectionErrorTitle:alertTitle message:alertMessage buttons:alertButtons];
 	[IDMAlertViewManager showDefaultConnectionFailureAlert];
 	
-	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],			@"[%@] %@", alertTitle, self.shared.alertView.title);
-	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],		@"[%@] %@", alertMessage, self.shared.alertView.message);
-	XCTAssertTrue(self.shared.alertView.numberOfButtons == alertButtons.count + 1,	@"[%d] %d", alertButtons.count + 1, self.shared.alertView.numberOfButtons);
+	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],		@"[%@] %@", alertTitle, self.shared.alertView.title);
+	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],	@"[%@] %@", alertMessage, self.shared.alertView.message);
+	XCTAssertTrue(self.shared.alertView.numberOfButtons == alertButtons.count,	@"[%d] %d", alertButtons.count, self.shared.alertView.numberOfButtons);
 	
 	// Changing the alert's buttons, title and message
 	[IDMAlertViewManager dismiss:NO];
-	[IDMAlertViewManager setDefaultConnectionErrorTitle:alertTitle2 message:alertMessage2 otherButtons:alertButtons2];
+	[IDMAlertViewManager setDefaultConnectionErrorTitle:alertTitle2 message:alertMessage2 buttons:alertButtons2];
 	[IDMAlertViewManager showDefaultConnectionFailureAlert];
 	
 	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle2],		@"[%@] %@", alertTitle2, self.shared.alertView.title);
 	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage2],	@"[%@] %@", alertMessage2, self.shared.alertView.message);
-	XCTAssertTrue(self.shared.alertView.numberOfButtons == alertButtons2.count + 1,	@"[%d] %d", alertButtons2.count + 1, self.shared.alertView.numberOfButtons);
+	XCTAssertTrue(self.shared.alertView.numberOfButtons == alertButtons2.count,		@"[%d] %d", alertButtons2.count, self.shared.alertView.numberOfButtons);
 	
 	// Removing buttons
 	[IDMAlertViewManager dismiss:NO];
@@ -323,12 +323,12 @@
 	} failure:^(NSError *error) {
 		XCTAssertNotNil(error, @"[not nil] %@", error);
 		XCTAssertTrue(error.code == IDMAlertErrorHigherPriorityAlert, @"[%d] %d", IDMAlertErrorHigherPriorityAlert, error.code);
-	} otherButtons:alertButtons];
+	} buttons:alertButtons];
 	
 	XCTAssertTrue(self.shared.isAlertViewVisible, @"[1] %d", self.shared.isAlertViewVisible);
-	XCTAssertTrue(self.shared.alertView.numberOfButtons == alertButtons.count + 1,	@"[%d] %d", alertButtons.count + 1, self.shared.alertView.numberOfButtons);
-	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],			@"[%@] %@", alertTitle, self.shared.alertView.title);
-	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],		@"[%@] %@", alertMessage, self.shared.alertView.message);
+	XCTAssertTrue(self.shared.alertView.numberOfButtons == alertButtons.count,	@"[%d] %d", alertButtons.count, self.shared.alertView.numberOfButtons);
+	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],		@"[%@] %@", alertTitle, self.shared.alertView.title);
+	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],	@"[%@] %@", alertMessage, self.shared.alertView.message);
 	
 	// Failing to show an alert with lower or equal priority
 	NSString *anotherTitle		= @"aTitle";
@@ -340,22 +340,22 @@
 	} failure:^(NSError *error) {
 		XCTAssertNotNil(error, @"[not nil] %@", error);
 		XCTAssertTrue(error.code == IDMAlertErrorHigherPriorityAlert, @"[%d] %d", IDMAlertErrorHigherPriorityAlert, error.code);
-	} otherButtons:anotherButtons];
+	} buttons:anotherButtons];
 	
 	XCTAssertFalse([self.shared.alertView.title isEqualToString:anotherTitle],		@"[%@] %@", anotherTitle, self.shared.alertView.title);
 	XCTAssertFalse([self.shared.alertView.message isEqualToString:anotherMessage],	@"[%@] %@", anotherMessage, self.shared.alertView.message);
-	XCTAssertFalse(self.shared.alertView.numberOfButtons == anotherButtons.count + 1, @"[%d] %d", anotherButtons.count + 1, self.shared.alertView.numberOfButtons);
+	XCTAssertFalse(self.shared.alertView.numberOfButtons == anotherButtons.count,	@"[%d] %d", anotherButtons.count, self.shared.alertView.numberOfButtons);
 	
 	// Showing an alert with higher priority
 	[IDMAlertViewManager showAlertWithTitle:alertTitle message:alertMessage priority:IDMAlertPriorityHigh success:^(NSUInteger selectedIndex) {
 		XCTAssertTrue(dismissed, @"Run success block before dismissing");
 	} failure:^(NSError *error) {
 		XCTAssertFalse(YES, @"Shouldn't throw error");
-	} otherButtons:anotherButtons];
+	} buttons:anotherButtons];
 	
-	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],		@"[%@] %@", alertTitle, self.shared.alertView.title);
-	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],	@"[%@] %@", alertMessage, self.shared.alertView.message);
-	XCTAssertTrue(self.shared.alertView.numberOfButtons == anotherButtons.count + 1, @"[%d] %d", anotherButtons.count + 1, self.shared.alertView.numberOfButtons);
+	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],			@"[%@] %@", alertTitle, self.shared.alertView.title);
+	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],		@"[%@] %@", alertMessage, self.shared.alertView.message);
+	XCTAssertTrue(self.shared.alertView.numberOfButtons == anotherButtons.count,	@"[%d] %d", anotherButtons.count, self.shared.alertView.numberOfButtons);
 	
 	dismissed = YES;
 	[IDMAlertViewManager simulateDismissalClick];

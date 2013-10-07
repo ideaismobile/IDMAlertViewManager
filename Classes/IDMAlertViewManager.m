@@ -60,7 +60,7 @@ static dispatch_queue_t custom_queue;
 @property (nonatomic, strong) NSString *defaultDismissalButtonText;
 
 /**
- *  The "other buttons" array for dismissing the default connection failure alert.
+ *  The buttons array for dismissing the default connection failure alert.
  */
 @property (nonatomic, strong) NSArray *buttonsArray;
 
@@ -141,11 +141,11 @@ static dispatch_queue_t custom_queue;
 // Sets the title and message for the default connection failure alert.
 + (void)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message
 {
-	[IDMAlertViewManager setDefaultConnectionErrorTitle:title message:message otherButtons:nil];
+	[IDMAlertViewManager setDefaultConnectionErrorTitle:title message:message buttons:nil];
 }
 
 // Sets the title, message and dismiss buttons for the default connection failure alert.
-+ (void)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message otherButtons:(NSArray *)buttonsArray
++ (void)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message buttons:(NSArray *)buttonsArray
 {
 	IDMAlertViewManager *avm = [IDMAlertViewManager sharedInstance];
 	
@@ -180,7 +180,7 @@ static dispatch_queue_t custom_queue;
 								   priority:IDMAlertPriorityMedium
 									success:successBlock
 									failure:failureBlock
-							   otherButtons:avm.buttonsArray];
+									buttons:avm.buttonsArray];
 }
 
 // Shows an alert with the given `title` and `message` and the default priority `IDMAlertPriorityMedium`.
@@ -217,7 +217,7 @@ static dispatch_queue_t custom_queue;
 								   priority:priority
 									success:successBlock
 									failure:failureBlock
-							   otherButtons:nil];
+									buttons:nil];
 }
 
 // Shows an alert with the given `title`, `message`, `priority` and `otherButtons` for dismissing the UIAlertView.
@@ -226,7 +226,7 @@ static dispatch_queue_t custom_queue;
 				  priority:(IDMAlertPriority)priority
 				   success:(IDMAlertViewSuccessBlock)successBlock
 				   failure:(IDMAlertViewFailureBlock)failureBlock
-			  otherButtons:(NSArray *)buttonsArray
+				   buttons:(NSArray *)buttonsArray
 {
 	IDMAlertViewManager *avm = [IDMAlertViewManager sharedInstance];
 	if ([avm isMoreImportantThanPriority:priority])
@@ -251,7 +251,6 @@ static dispatch_queue_t custom_queue;
 	avm.alertView.title		= title;
 	avm.alertView.message	= message;
 	
-	[avm.alertView addButtonWithTitle:avm.defaultDismissalButtonText];
 	for (NSString *buttonTitle in buttonsArray)
 	{
 		[avm.alertView addButtonWithTitle:buttonTitle];
