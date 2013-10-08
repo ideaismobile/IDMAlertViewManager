@@ -214,7 +214,7 @@ static IDMAlertViewManager *_sharedInstance;
 									buttons:nil];
 }
 
-// Shows an alert with the given `title`, `message`, `priority` and `otherButtons` for dismissing the UIAlertView.
+// Shows an alert with the given `title`, `message`, `priority` and `buttons` for dismissing the UIAlertView.
 + (void)showAlertWithTitle:(NSString *)title
 				   message:(NSString *)message
 				  priority:(IDMAlertPriority)priority

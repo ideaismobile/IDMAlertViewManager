@@ -308,7 +308,7 @@
 	[IDMAlertViewManager simulateDismissalClick];
 }
 
-- (void)testShowAlertWithTitleMessagePrioritySuccessFailureOtherButtons
+- (void)testShowAlertWithTitleMessagePrioritySuccessFailureButtons
 {
 	// Setting properties
 	NSString *alertTitle	= @"title";
