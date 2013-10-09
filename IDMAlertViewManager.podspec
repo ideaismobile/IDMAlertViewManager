@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary      = "Handles different priorities alerts and terminates the problem of multiple alerts being displayed at the same time."
   s.homepage     = "http://ideaismobile.github.io/IDMAlertViewManager/"
 
-  s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Ideais Mobile" => "mobile@ideais.com.br" }
   s.source       = { 
     :git => "https://github.com/ideaismobile/IDMAlertViewManager.git", 
