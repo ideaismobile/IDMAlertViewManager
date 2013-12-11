@@ -54,6 +54,18 @@ The most complete method available is:
                               } buttons:@[@"Yes", @"No"]];
 ```
 
+You can also give an instance of `UIAlertView` to be displayed according to a priority:
+
+``` objective-c
+UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"OK", nil];
+                                          
+[IDMAlertViewManager showAlertView:alertView priority:IDMAlertPriorityMedium];
+```
+
 ### Priorities
 
 There are four main priorities, but any unsigned integer may be provided to set a priority to an alert. The lower the value, the higher the priority.
