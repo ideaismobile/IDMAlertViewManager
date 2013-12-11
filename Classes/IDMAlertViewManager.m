@@ -70,6 +70,8 @@ static IDMAlertViewManager *_sharedInstance;
  */
 @property (nonatomic) BOOL isAlertViewVisible;
 
+@property (nonatomic, strong) id<UIAlertViewDelegate> originalDelegate;
+
 #pragma mark - Private Methods Declaration
 
 /**
@@ -299,6 +301,9 @@ static IDMAlertViewManager *_sharedInstance;
 	avm.currentPriority		= priority;
 	avm.isAlertViewVisible	= YES;
     avm.alertView           = alertView;
+    avm.originalDelegate    = alertView.delegate;
+    
+    alertView.delegate = self;
     
     [avm.alertView show];
     
@@ -324,6 +329,11 @@ static IDMAlertViewManager *_sharedInstance;
 	{
 		self.successBlock(buttonIndex);
 	}
+    
+    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    {
+        [self.originalDelegate alertView:alertView clickedButtonAtIndex:buttonIndex];
+    }
 	
 	[self clearVolatileProperties];
 }
@@ -335,6 +345,53 @@ static IDMAlertViewManager *_sharedInstance;
 		NSError *error = [[NSError alloc] initWithDomain:kFAILED_DISMISS_MESSAGE code:IDMAlertErrorFailedDismiss userInfo:nil];
 		self.failureBlock(error);
 	}
+    
+    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    {
+        [self.originalDelegate alertView:alertView didDismissWithButtonIndex:buttonIndex];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    {
+        [self.originalDelegate alertView:alertView willDismissWithButtonIndex:buttonIndex];
+    }
+}
+
+- (void)alertViewCancel:(UIAlertView *)alertView
+{
+    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    {
+        [self.originalDelegate alertViewCancel:alertView];
+    }
+}
+
+- (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
+{
+    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    {
+        return [self.originalDelegate alertViewShouldEnableFirstOtherButton:alertView];
+    }
+    
+    return YES;
+}
+
+- (void)didPresentAlertView:(UIAlertView *)alertView
+{
+    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    {
+        [self.originalDelegate didPresentAlertView:alertView];
+    }
+}
+
+- (void)willPresentAlertView:(UIAlertView *)alertView
+{
+    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    {
+        [self.originalDelegate willPresentAlertView:alertView];
+    }
 }
 
 #pragma mark - Private Methods
@@ -346,6 +403,7 @@ static IDMAlertViewManager *_sharedInstance;
 	
 	self.alertView			= [UIAlertView new];
 	self.alertView.delegate = self;
+    self.originalDelegate   = nil;
 	
 	self.successBlock		= nil;
 	self.failureBlock		= nil;
