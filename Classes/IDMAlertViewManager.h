@@ -236,6 +236,14 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
 				   failure:(IDMAlertViewFailureBlock)failureBlock
 				   buttons:(NSArray *)buttonsArray;
 
+/**
+ *  Shows a custom alert view with the given priority.
+ *
+ *  @param alertView An instance of UIAlertView
+ *  @param priority  The alert priority
+ */
++ (BOOL)showAlertView:(UIAlertView *)alertView priority:(IDMAlertPriority)priority;
+
 #pragma mark - Dismissing Alerts
 /** @name Dismissing Alerts */
 
