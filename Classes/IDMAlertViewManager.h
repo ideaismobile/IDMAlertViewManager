@@ -61,10 +61,16 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
 	 *  Indicates that the alert failed because another with higher priority was prompted.
 	 */
 	IDMAlertErrorHigherPriorityAlert,
+    
 	/**
 	 *  When the alert is dismissed programmatically.
 	 */
-	IDMAlertErrorFailedDismiss
+	IDMAlertErrorFailedDismiss,
+    
+    /**
+     *  When the given title and message for the alert view are nil.
+     */
+    IDMAlertErrorNilOutputs
 };
 
 /**
@@ -80,8 +86,10 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  *
  *  @param title	The UIAlertView title
  *  @param message  The UIAlertView text message
+ *
+ *  @return Whether or not the params were set.
  */
-+ (void)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message;
++ (BOOL)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message;
 
 /**
  *  Sets the title, message and dismiss buttons for the default connection failure alert.
@@ -89,15 +97,19 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  *  @param title        The UIAlertView title
  *  @param message      The UIAlertView text message
  *  @param buttonsArray A NSArray of NSStrings with dismiss buttons for the UIAlertView
+ *
+ *  @return Whether or not the params were set.
  */
-+ (void)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message buttons:(NSArray *)buttonsArray;
++ (BOOL)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message buttons:(NSArray *)buttonsArray;
 
 /**
  *  Changes the default message for the main dismissal button. If not set, the default value is "OK"
  *
  *  @param dismissButtonMessage The new text for the main dismissal button.
+ *
+ *  @return Whether or not the button was set.
  */
-+ (void)setDefaultDismissalButton:(NSString *)dismissButtonMessage;
++ (BOOL)setDefaultDismissalButton:(NSString *)dismissButtonMessage;
 
 #pragma mark - Displaying Alerts
 /** @name Displaying Alerts */
@@ -105,10 +117,12 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
 /**
  *  Shows the default connection error alert. This alert is displayed with the default priority `IDMAlertPriorityMedium`.
  *
+ *  @return Whether or not the alert was displayed.
+ *
  *  @see setDefaultConnectionErrorTitle:message:
  *  @see setDefaultConnectionErrorTitle:message:buttons:
  */
-+ (void)showDefaultConnectionFailureAlert;
++ (BOOL)showDefaultConnectionFailureAlert;
 
 /**
  *  Shows the default connection error alert. This alert is displayed with the default priority `IDMAlertPriorityMedium`.
@@ -124,12 +138,14 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  *
  *  - *error*: The error that occurred.
  *
+ *  @return Whether or not the alert was displayed.
+ *
  *	@see IDMAlertError
  *
  *  @see setDefaultConnectionErrorTitle:message:
  *  @see setDefaultConnectionErrorTitle:message:buttons:
  */
-+ (void)showDefaultConnectionAlertWithSuccess:(IDMAlertViewSuccessBlock)successBlock failure:(IDMAlertViewFailureBlock)failureBlock;
++ (BOOL)showDefaultConnectionAlertWithSuccess:(IDMAlertViewSuccessBlock)successBlock failure:(IDMAlertViewFailureBlock)failureBlock;
 
 /**
  *  Shows an alert with the given `title` and `message` and the default priority `IDMAlertPriorityMedium`.
@@ -137,10 +153,12 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  *  @param title The UIAlertView title
  *  @param message  The UIAlertView text message
  *
+ *  @return Whether or not the alert was displayed.
+ *
  *	@see showAlertWithTitle:message:priority:
  *	@see showAlertWithTitle:message:priority:success:failure:buttons:
  */
-+ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
++ (BOOL)showAlertWithTitle:(NSString *)title message:(NSString *)message;
 
 /**
  *  Shows an alert with the given `title`, `message` and `priority`. If an alert with lower priority than this is currently visible, it gets dismissed and this alert takes it's place.
@@ -149,9 +167,11 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  *  @param message  The UIAlertView text message
  *  @param priority The alert priority
  *
+ *  @return Whether or not the alert was displayed.
+ *
  *	@see showAlertWithTitle:message:priority:success:failure:buttons:
  */
-+ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message priority:(IDMAlertPriority)priority;
++ (BOOL)showAlertWithTitle:(NSString *)title message:(NSString *)message priority:(IDMAlertPriority)priority;
 
 /**
  *  Shows an alert with the given `title` and `message` and the default priority `IDMAlertPriorityMedium`.
@@ -170,12 +190,14 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  *
  *  - *error*: The error that occurred.
  *
+ *  @return Whether or not the alert was displayed.
+ *
  *	@see IDMAlertError
  *
  *	@see showAlertWithTitle:message:priority:success:failure:
  *	@see showAlertWithTitle:message:priority:success:failure:buttons:
  */
-+ (void)showAlertWithTitle:(NSString *)title
++ (BOOL)showAlertWithTitle:(NSString *)title
 				   message:(NSString *)message
 				   success:(IDMAlertViewSuccessBlock)successBlock
 				   failure:(IDMAlertViewFailureBlock)failureBlock;
@@ -198,11 +220,13 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  *
  *  - *error*: The error that occurred.
  *
+ *  @return Whether or not the alert was displayed.
+ *
  *	@see IDMAlertError
  *
  *	@see showAlertWithTitle:message:priority:success:failure:buttons:
  */
-+ (void)showAlertWithTitle:(NSString *)title
++ (BOOL)showAlertWithTitle:(NSString *)title
 				   message:(NSString *)message
 				  priority:(IDMAlertPriority)priority
 				   success:(IDMAlertViewSuccessBlock)successBlock
@@ -226,10 +250,12 @@ typedef NS_ENUM(NSInteger, IDMAlertError)
  *
  *  - *error*: The error that occurred.
  *
+ *  @return Whether or not the alert was displayed.
+ *
  *	@see IDMAlertError
  *  @param buttonsArray A NSArray of NSStrings with dismiss buttons for the UIAlertView
  */
-+ (void)showAlertWithTitle:(NSString *)title
++ (BOOL)showAlertWithTitle:(NSString *)title
 				   message:(NSString *)message
 				  priority:(IDMAlertPriority)priority
 				   success:(IDMAlertViewSuccessBlock)successBlock
