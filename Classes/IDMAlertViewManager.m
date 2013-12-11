@@ -11,6 +11,7 @@
 #define kFAILED_DISMISS_INDEX	94836
 
 #define kHIGHER_ALERT_MESSAGE	@"Higher Priority Alert: %d"
+#define kNIL_OUTPUTS_MESSAGE    @"Message and Title cannot be nil"
 #define kFAILED_DISMISS_MESSAGE	@"Programmatically Dismissed Alert"
 
 #import "IDMAlertViewManager.h"
@@ -133,89 +134,103 @@ static IDMAlertViewManager *_sharedInstance;
 #pragma mark - Class Methods
 
 // Sets the title and message for the default connection failure alert.
-+ (void)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message
++ (BOOL)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message
 {
-	[IDMAlertViewManager setDefaultConnectionErrorTitle:title message:message buttons:nil];
+	return [IDMAlertViewManager setDefaultConnectionErrorTitle:title message:message buttons:@[]];
 }
 
 // Sets the title, message and dismiss buttons for the default connection failure alert.
-+ (void)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message buttons:(NSArray *)buttonsArray
++ (BOOL)setDefaultConnectionErrorTitle:(NSString *)title message:(NSString *)message buttons:(NSArray *)buttonsArray
 {
+    if ((message == nil && title == nil) || buttonsArray == nil)
+    {
+		return NO;
+    }
+    
 	IDMAlertViewManager *avm = [IDMAlertViewManager sharedInstance];
 	
 	avm.defaultConnectionFailureTitle	= title;
 	avm.defaultConnectionFailureMessage	= message;
 	avm.buttonsArray					= buttonsArray;
+    
+    return YES;
 }
 
 // Changes the default message for the main dismissal button. If this mehod is not called, the message is `OK`
-+ (void)setDefaultDismissalButton:(NSString *)dismissButtonMessage
++ (BOOL)setDefaultDismissalButton:(NSString *)dismissButtonMessage
 {
+    if (dismissButtonMessage == nil)
+    {
+        return NO;
+    }
+    
 	IDMAlertViewManager *avm = [IDMAlertViewManager sharedInstance];
 	
 	avm.defaultDismissalButtonText = dismissButtonMessage;
+    
+    return YES;
 }
 
 #pragma mark - Displaying Alerts
 
 // Shows the default connection error alert. This alert is displayed with the default priority `IDMAlertPriorityMedium`.
-+ (void)showDefaultConnectionFailureAlert
++ (BOOL)showDefaultConnectionFailureAlert
 {
-	[IDMAlertViewManager showDefaultConnectionAlertWithSuccess:nil failure:nil];
+	return [IDMAlertViewManager showDefaultConnectionAlertWithSuccess:nil failure:nil];
 }
 
 // Shows the default connection error alert. This alert is displayed with the default priority `IDMAlertPriorityMedium`.
-+ (void)showDefaultConnectionAlertWithSuccess:(IDMAlertViewSuccessBlock)successBlock failure:(IDMAlertViewFailureBlock)failureBlock
++ (BOOL)showDefaultConnectionAlertWithSuccess:(IDMAlertViewSuccessBlock)successBlock failure:(IDMAlertViewFailureBlock)failureBlock
 {
 	IDMAlertViewManager *avm = [IDMAlertViewManager sharedInstance];
 	
-	[IDMAlertViewManager showAlertWithTitle:avm.defaultConnectionFailureTitle
-									message:avm.defaultConnectionFailureMessage
-								   priority:IDMAlertPriorityMedium
-									success:successBlock
-									failure:failureBlock
-									buttons:avm.buttonsArray];
+	return [IDMAlertViewManager showAlertWithTitle:avm.defaultConnectionFailureTitle
+                                           message:avm.defaultConnectionFailureMessage
+                                          priority:IDMAlertPriorityMedium
+                                           success:successBlock
+                                           failure:failureBlock
+                                           buttons:avm.buttonsArray];
 }
 
 // Shows an alert with the given `title` and `message` and the default priority `IDMAlertPriorityMedium`.
-+ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message
++ (BOOL)showAlertWithTitle:(NSString *)title message:(NSString *)message
 {
-	[self showAlertWithTitle:title message:message priority:IDMAlertPriorityMedium];
+	return [IDMAlertViewManager showAlertWithTitle:title message:message priority:IDMAlertPriorityMedium];
 }
 
 // Shows an alert with the given `title`, `message` and `priority`. If an alert with lower priority than this is currently visible, it gets dismissed and this alert takes it's place.
-+ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message priority:(IDMAlertPriority)priority
++ (BOOL)showAlertWithTitle:(NSString *)title message:(NSString *)message priority:(IDMAlertPriority)priority
 {
-	[IDMAlertViewManager showAlertWithTitle:title
-									message:message
-								   priority:priority
-									success:nil
-									failure:nil];
+	return [IDMAlertViewManager showAlertWithTitle:title
+                                           message:message
+                                          priority:priority
+                                           success:nil
+                                           failure:nil];
 }
 
 // Shows an alert with the given `title` and `message` and the default priority `IDMAlertPriorityMedium`.
-+ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message success:(IDMAlertViewSuccessBlock)successBlock failure:(IDMAlertViewFailureBlock)failureBlock
++ (BOOL)showAlertWithTitle:(NSString *)title message:(NSString *)message success:(IDMAlertViewSuccessBlock)successBlock failure:(IDMAlertViewFailureBlock)failureBlock
 {
-	[IDMAlertViewManager showAlertWithTitle:title
-									message:message
-								   priority:IDMAlertPriorityMedium
-									success:successBlock
-									failure:failureBlock];
+	return [IDMAlertViewManager showAlertWithTitle:title
+                                           message:message
+                                          priority:IDMAlertPriorityMedium
+                                           success:successBlock
+                                           failure:failureBlock];
 }
 
 // Shows an alert with the given `title`, `message` and `priority`.
-+ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message priority:(IDMAlertPriority)priority success:(IDMAlertViewSuccessBlock)successBlock failure:(IDMAlertViewFailureBlock)failureBlock
++ (BOOL)showAlertWithTitle:(NSString *)title message:(NSString *)message priority:(IDMAlertPriority)priority success:(IDMAlertViewSuccessBlock)successBlock failure:(IDMAlertViewFailureBlock)failureBlock
 {
-	[IDMAlertViewManager showAlertWithTitle:title
-									message:message
-								   priority:priority
-									success:successBlock
-									failure:failureBlock
-									buttons:nil];
+	return [IDMAlertViewManager showAlertWithTitle:title
+                                           message:message
+                                          priority:priority
+                                           success:successBlock
+                                           failure:failureBlock
+                                           buttons:nil];
 }
 
 // Shows an alert with the given `title`, `message`, `priority` and `buttons` for dismissing the UIAlertView.
-+ (void)showAlertWithTitle:(NSString *)title
++ (BOOL)showAlertWithTitle:(NSString *)title
 				   message:(NSString *)message
 				  priority:(IDMAlertPriority)priority
 				   success:(IDMAlertViewSuccessBlock)successBlock
@@ -231,16 +246,26 @@ static IDMAlertViewManager *_sharedInstance;
 			failureBlock(error);
 		}
 		
-		return;
+		return NO;
 	}
+    
+    if (message == nil && title == nil)
+    {
+		if (failureBlock)
+		{
+			NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kNIL_OUTPUTS_MESSAGE] code:IDMAlertErrorNilOutputs userInfo:nil];
+			failureBlock(error);
+		}
+		
+		return NO;
+    }
 	
-	avm.currentPriority		= priority;
 	avm.successBlock		= successBlock;
 	avm.failureBlock		= failureBlock;
-	avm.isAlertViewVisible	= YES;
-	
-	avm.alertView.title		= title;
-	avm.alertView.message	= message;
+    
+    UIAlertView *alertView  = [UIAlertView new];
+	alertView.title         = title;
+	alertView.message       = message;
     
     if (buttonsArray == nil || buttonsArray.count == 0)
     {
@@ -249,10 +274,35 @@ static IDMAlertViewManager *_sharedInstance;
 	
 	for (NSString *buttonTitle in buttonsArray)
 	{
-		[avm.alertView addButtonWithTitle:buttonTitle];
+		[alertView addButtonWithTitle:buttonTitle];
 	}
-	
-	[avm.alertView show];
+    
+    return [IDMAlertViewManager showAlertView:alertView priority:priority];
+}
+
+//  Shows a custom alert view with the given priority.
++ (BOOL)showAlertView:(UIAlertView *)alertView priority:(IDMAlertPriority)priority
+{
+    IDMAlertViewManager *avm = [IDMAlertViewManager sharedInstance];
+    
+	if ([avm isMoreImportantThanPriority:priority])
+	{
+		if (avm.failureBlock)
+		{
+			NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kHIGHER_ALERT_MESSAGE, avm.currentPriority] code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
+			avm.failureBlock(error);
+		}
+		
+		return NO;
+	}
+    
+	avm.currentPriority		= priority;
+	avm.isAlertViewVisible	= YES;
+    avm.alertView           = alertView;
+    
+    [avm.alertView show];
+    
+    return YES;
 }
 
 #pragma mark - Dismissing Alerts
