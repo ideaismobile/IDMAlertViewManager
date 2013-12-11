@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "IDMAlertViewManager"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "Handles different priorities alerts and terminates the problem of multiple alerts being displayed at the same time."
   s.homepage     = "http://ideaismobile.github.io/IDMAlertViewManager/"
 
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { "Ideais Mobile" => "mobile@ideais.com.br" }
   s.source       = { 
     :git => "https://github.com/ideaismobile/IDMAlertViewManager.git", 
-    :tag => "1.0"
+    :tag => "1.1"
   }
 
   s.platform     = :ios, '7.0'
