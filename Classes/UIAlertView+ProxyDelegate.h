@@ -10,10 +10,19 @@
 
 #import "IDMAlertViewManager.h"
 
+/**
+ *  This category extends UIAlertView in a manner that it now may have a priority, completion blocks, etc.
+ */
 @interface UIAlertView (ProxyDelegate)
 
+/**
+ *  The original delegate before proxying.
+ */
 @property (nonatomic, strong) id<UIAlertViewDelegate> originalDelegate;
 
+/**
+ *  The alertview priority
+ */
 @property (nonatomic) IDMAlertPriority priority;
 
 /**
