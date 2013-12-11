@@ -16,6 +16,8 @@
 
 #import "IDMAlertViewManager.h"
 
+#import "UIAlertView+ProxyDelegate.h"
+
 /**
  *  The singleton's shared instance.
  */
@@ -24,21 +26,6 @@ static IDMAlertViewManager *_sharedInstance;
 @interface IDMAlertViewManager ()
 
 #pragma mark - Properties
-
-/**
- *  The priority of the current alert visible. If there's none, it's `INFINITY`.
- */
-@property (nonatomic) IDMAlertPriority currentPriority;
-
-/**
- *  The success block to be called when the visible alert view gets dismissed.
- */
-@property (nonatomic, strong) IDMAlertViewSuccessBlock successBlock;
-
-/**
- *  The failure block to be called when the visible alert view gets dismissed by any reason different than the user.
- */
-@property (nonatomic, strong) IDMAlertViewFailureBlock failureBlock;
 
 /**
  *  The title for the default connection failure alert.
@@ -65,13 +52,6 @@ static IDMAlertViewManager *_sharedInstance;
  */
 @property (nonatomic, strong) UIAlertView *alertView;
 
-/**
- *  Indicates if the current alert view is visible. Necessary because [UIAlertView show] might be called, but it's `isVisible` is yet `NO`.
- */
-@property (nonatomic) BOOL isAlertViewVisible;
-
-@property (nonatomic, strong) id<UIAlertViewDelegate> originalDelegate;
-
 #pragma mark - Private Methods Declaration
 
 /**
@@ -83,13 +63,6 @@ static IDMAlertViewManager *_sharedInstance;
  *  Clears the volatile properties like `successBlock`, `failureBlock` and `currentPriority`.
  */
 - (void)clearVolatileProperties;
-
-/**
- *  Check the importance of the current alert priority, if any, against the given one. If this priority is higher, dismiss the current alert.
- *
- *  @param priority A IDMAlertPriority
- */
-- (BOOL)isMoreImportantThanPriority:(IDMAlertPriority)priority;
 
 /**
  *  Returns the shared instance for the singleton. Initializes it if it's nil.
@@ -239,18 +212,6 @@ static IDMAlertViewManager *_sharedInstance;
 				   failure:(IDMAlertViewFailureBlock)failureBlock
 				   buttons:(NSArray *)buttonsArray
 {
-	IDMAlertViewManager *avm = [IDMAlertViewManager sharedInstance];
-	if ([avm isMoreImportantThanPriority:priority])
-	{
-		if (failureBlock)
-		{
-			NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kHIGHER_ALERT_MESSAGE, avm.currentPriority] code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
-			failureBlock(error);
-		}
-		
-		return NO;
-	}
-    
     if (message == nil && title == nil)
     {
 		if (failureBlock)
@@ -261,16 +222,16 @@ static IDMAlertViewManager *_sharedInstance;
 		
 		return NO;
     }
-	
-	avm.successBlock		= successBlock;
-	avm.failureBlock		= failureBlock;
     
     UIAlertView *alertView  = [UIAlertView new];
 	alertView.title         = title;
 	alertView.message       = message;
+    alertView.successBlock  = successBlock;
+    alertView.failureBlock  = failureBlock;
     
     if (buttonsArray == nil || buttonsArray.count == 0)
     {
+        IDMAlertViewManager *avm = [IDMAlertViewManager sharedInstance];
         buttonsArray = @[avm.defaultDismissalButtonText];
     }
 	
@@ -285,26 +246,37 @@ static IDMAlertViewManager *_sharedInstance;
 //  Shows a custom alert view with the given priority.
 + (BOOL)showAlertView:(UIAlertView *)alertView priority:(IDMAlertPriority)priority
 {
-    IDMAlertViewManager *avm = [IDMAlertViewManager sharedInstance];
+    IDMAlertViewManager *avm    = [IDMAlertViewManager sharedInstance];
+    alertView.priority          = priority;
     
-	if ([avm isMoreImportantThanPriority:priority])
-	{
-		if (avm.failureBlock)
+    if (avm.alertView == nil || alertView.priority < avm.alertView.priority)
+    {
+        [avm.alertView dismissWithClickedButtonIndex:kDEFAULT_DISMISS_INDEX animated:NO];
+        
+        if (avm.alertView.failureBlock)
+        {
+            NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kHIGHER_ALERT_MESSAGE, avm.alertView.priority] code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
+            avm.alertView.failureBlock(error);
+        }
+    }
+    else
+    {
+		if (alertView.failureBlock)
 		{
-			NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kHIGHER_ALERT_MESSAGE, avm.currentPriority] code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
-			avm.failureBlock(error);
+			NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kHIGHER_ALERT_MESSAGE, alertView.priority] code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
+			alertView.failureBlock(error);
 		}
-		
-		return NO;
-	}
+        
+        return NO;
+    }
     
-	avm.currentPriority		= priority;
-	avm.isAlertViewVisible	= YES;
-    avm.alertView           = alertView;
-    avm.originalDelegate    = alertView.delegate;
+    if (alertView.delegate != avm)
+    {
+        alertView.originalDelegate = alertView.delegate;
+    }
+    alertView.delegate = avm;
     
-    alertView.delegate = self;
-    
+    avm.alertView = alertView;
     [avm.alertView show];
     
     return YES;
@@ -325,54 +297,56 @@ static IDMAlertViewManager *_sharedInstance;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-	if (self.successBlock)
+	[self clearVolatileProperties];
+    
+	if (alertView.successBlock)
 	{
-		self.successBlock(buttonIndex);
+		alertView.successBlock(buttonIndex);
 	}
     
-    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    if (alertView.originalDelegate && [alertView.originalDelegate respondsToSelector:_cmd])
     {
-        [self.originalDelegate alertView:alertView clickedButtonAtIndex:buttonIndex];
+        [alertView.originalDelegate alertView:alertView clickedButtonAtIndex:buttonIndex];
     }
-	
-	[self clearVolatileProperties];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-	if (self.failureBlock && buttonIndex == kFAILED_DISMISS_INDEX)
+	[self clearVolatileProperties];
+    
+	if (alertView.failureBlock && buttonIndex == kFAILED_DISMISS_INDEX)
 	{
 		NSError *error = [[NSError alloc] initWithDomain:kFAILED_DISMISS_MESSAGE code:IDMAlertErrorFailedDismiss userInfo:nil];
-		self.failureBlock(error);
+		alertView.failureBlock(error);
 	}
     
-    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    if (alertView.originalDelegate && [alertView.originalDelegate respondsToSelector:_cmd])
     {
-        [self.originalDelegate alertView:alertView didDismissWithButtonIndex:buttonIndex];
+        [alertView.originalDelegate alertView:alertView didDismissWithButtonIndex:buttonIndex];
     }
 }
 
 - (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    if (alertView.originalDelegate && [alertView.originalDelegate respondsToSelector:_cmd])
     {
-        [self.originalDelegate alertView:alertView willDismissWithButtonIndex:buttonIndex];
+        [alertView.originalDelegate alertView:alertView willDismissWithButtonIndex:buttonIndex];
     }
 }
 
 - (void)alertViewCancel:(UIAlertView *)alertView
 {
-    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    if (alertView.originalDelegate && [alertView.originalDelegate respondsToSelector:_cmd])
     {
-        [self.originalDelegate alertViewCancel:alertView];
+        [alertView.originalDelegate alertViewCancel:alertView];
     }
 }
 
 - (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
 {
-    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    if (alertView.originalDelegate && [alertView.originalDelegate respondsToSelector:_cmd])
     {
-        return [self.originalDelegate alertViewShouldEnableFirstOtherButton:alertView];
+        return [alertView.originalDelegate alertViewShouldEnableFirstOtherButton:alertView];
     }
     
     return YES;
@@ -380,17 +354,17 @@ static IDMAlertViewManager *_sharedInstance;
 
 - (void)didPresentAlertView:(UIAlertView *)alertView
 {
-    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    if (alertView.originalDelegate && [alertView.originalDelegate respondsToSelector:_cmd])
     {
-        [self.originalDelegate didPresentAlertView:alertView];
+        [alertView.originalDelegate didPresentAlertView:alertView];
     }
 }
 
 - (void)willPresentAlertView:(UIAlertView *)alertView
 {
-    if (self.originalDelegate && [self.originalDelegate respondsToSelector:_cmd])
+    if (alertView.originalDelegate && [alertView.originalDelegate respondsToSelector:_cmd])
     {
-        [self.originalDelegate willPresentAlertView:alertView];
+        [alertView.originalDelegate willPresentAlertView:alertView];
     }
 }
 
@@ -399,43 +373,7 @@ static IDMAlertViewManager *_sharedInstance;
 // Clears the volatile properties like `successBlock`, `failureBlock` and `currentPriority`.
 - (void)clearVolatileProperties
 {
-	self.isAlertViewVisible	= NO;
-	
-	self.alertView			= [UIAlertView new];
-	self.alertView.delegate = self;
-    self.originalDelegate   = nil;
-	
-	self.successBlock		= nil;
-	self.failureBlock		= nil;
-	
-	self.currentPriority	= INFINITY;
-}
-
-// Check the importance of the current alert priority, if any, against the given one. If this priority is higher, dismiss the current alert.
-- (BOOL)isMoreImportantThanPriority:(IDMAlertPriority)priority
-{
-	if (! self.isAlertViewVisible)
-	{
-		return NO;
-	}
-	
-	// Dismiss the current alert if it's priority is lower than `priority`.
-	if (priority < self.currentPriority)
-	{
-		[self.alertView dismissWithClickedButtonIndex:kDEFAULT_DISMISS_INDEX animated:NO];
-		
-		if (self.failureBlock)
-		{
-			NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kHIGHER_ALERT_MESSAGE, self.currentPriority] code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
-			self.failureBlock(error);
-		}
-		
-		[self clearVolatileProperties];
-		
-		return NO;
-	}
-	
-	return YES;
+    self.alertView = nil;
 }
 
 // Returns the shared instance for the singleton. Initializes it if it's nil.

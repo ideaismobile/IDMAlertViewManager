@@ -34,6 +34,8 @@
 		72E39E5E17E8CADF00FCB895 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72E39E5C17E8CADF00FCB895 /* InfoPlist.strings */; };
 		72E39E6017E8CADF00FCB895 /* IDMAlertViewManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E39E5F17E8CADF00FCB895 /* IDMAlertViewManagerTests.m */; };
 		72E39E7117E8CBAF00FCB895 /* IDMAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E39E7017E8CBAF00FCB895 /* IDMAlertViewManager.m */; };
+		F2127A9A18590543005B0A28 /* UIAlertView+ProxyDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2127A9818590543005B0A28 /* UIAlertView+ProxyDelegate.m */; };
+		F2127A9B18590543005B0A28 /* UIAlertView+ProxyDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2127A9818590543005B0A28 /* UIAlertView+ProxyDelegate.m */; };
 		F259B29018033BD200F7C425 /* IDMAlertViewManager.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F259B28F18033BD200F7C425 /* IDMAlertViewManager.podspec */; };
 		F259B29218033BE600F7C425 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = F259B29118033BE600F7C425 /* .travis.yml */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,8 @@
 		72E39E5F17E8CADF00FCB895 /* IDMAlertViewManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDMAlertViewManagerTests.m; sourceTree = "<group>"; };
 		72E39E6F17E8CBAF00FCB895 /* IDMAlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMAlertViewManager.h; sourceTree = "<group>"; };
 		72E39E7017E8CBAF00FCB895 /* IDMAlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMAlertViewManager.m; sourceTree = "<group>"; };
+		F2127A9818590543005B0A28 /* UIAlertView+ProxyDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+ProxyDelegate.m"; sourceTree = "<group>"; };
+		F2127A9918590543005B0A28 /* UIAlertView+ProxyDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+ProxyDelegate.h"; sourceTree = "<group>"; };
 		F259B28F18033BD200F7C425 /* IDMAlertViewManager.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IDMAlertViewManager.podspec; sourceTree = "<group>"; };
 		F259B29118033BE600F7C425 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +179,8 @@
 			children = (
 				72E39E6F17E8CBAF00FCB895 /* IDMAlertViewManager.h */,
 				72E39E7017E8CBAF00FCB895 /* IDMAlertViewManager.m */,
+				F2127A9818590543005B0A28 /* UIAlertView+ProxyDelegate.m */,
+				F2127A9918590543005B0A28 /* UIAlertView+ProxyDelegate.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 				72E39E4B17E8CADF00FCB895 /* AppDelegate.m in Sources */,
 				72E39E4717E8CADF00FCB895 /* main.m in Sources */,
 				72E39E7117E8CBAF00FCB895 /* IDMAlertViewManager.m in Sources */,
+				F2127A9A18590543005B0A28 /* UIAlertView+ProxyDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72E39E6017E8CADF00FCB895 /* IDMAlertViewManagerTests.m in Sources */,
+				F2127A9B18590543005B0A28 /* UIAlertView+ProxyDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
