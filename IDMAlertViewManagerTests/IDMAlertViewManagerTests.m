@@ -10,9 +10,11 @@
 
 #import "IDMAlertViewManager_Tests.h"
 
-@interface IDMAlertViewManagerTests : XCTestCase
+@interface IDMAlertViewManagerTests : XCTestCase <UIAlertViewDelegate>
 
 @property (nonatomic, readonly) IDMAlertViewManager *shared;
+
+@property (nonatomic) BOOL globalResult;
 
 @end
 
@@ -24,6 +26,8 @@
 	
 	[IDMAlertViewManager _reinit];
 	_shared = [IDMAlertViewManager sharedInstance];
+    
+    self.globalResult = YES;
 }
 
 - (void)tearDown
@@ -31,6 +35,8 @@
 	[super tearDown];
 	
 	[IDMAlertViewManager dismiss:NO];
+    
+    XCTAssertTrue(self.globalResult, @"[%d] 1", self.globalResult);
 }
 
 #pragma mark - Tests
@@ -444,6 +450,67 @@
 	[IDMAlertViewManager simulateDismissalClick];
 }
 
+- (void)testShowAlertViewPriority
+{
+    self.globalResult = NO;
+    
+	// Setting properties
+	NSString *alertTitle	= @"title";
+	NSString *alertMessage	= @"message";
+	NSArray *alertButtons	= @[@"Foo", @"Bar"];
+    
+    UIAlertView *alertView  = [UIAlertView new];
+    alertView.title         = alertTitle;
+    alertView.message       = alertMessage;
+    alertView.delegate      = self;
+    
+    for (NSString *buttonTitle in alertButtons)
+    {
+        [alertView addButtonWithTitle:buttonTitle];
+    }
+    
+	// Showing an alert
+    BOOL result = [IDMAlertViewManager showAlertView:alertView priority:IDMAlertPriorityMedium];
+	
+    XCTAssertTrue(result, @"[1], %d", result);
+	XCTAssertTrue(self.shared.isAlertViewVisible, @"[1] %d", self.shared.isAlertViewVisible);
+	XCTAssertTrue(self.shared.alertView.numberOfButtons == alertButtons.count,	@"[%d] %d", alertButtons.count, self.shared.alertView.numberOfButtons);
+	XCTAssertTrue([self.shared.alertView.title isEqualToString:alertTitle],		@"[%@] %@", alertTitle, self.shared.alertView.title);
+	XCTAssertTrue([self.shared.alertView.message isEqualToString:alertMessage],	@"[%@] %@", alertMessage, self.shared.alertView.message);
+    
+	// Failing to show an alert with lower or equal priority
+	NSString *anotherTitle		= @"aTitle";
+	NSString *anotherMessage	= @"aMessage";
+	NSArray *anotherButtons		= @[@"button1", @"button2", @"button3"];
+    
+    UIAlertView *newAlertView   = [UIAlertView new];
+    newAlertView.title          = anotherTitle;
+    newAlertView.message        = anotherMessage;
+    newAlertView.delegate       = self;
+    
+    for (NSString *buttonTitle in anotherButtons)
+    {
+        [newAlertView addButtonWithTitle:buttonTitle];
+    }
+    
+    result = [IDMAlertViewManager showAlertView:newAlertView priority:IDMAlertPriorityMedium];
+	
+    XCTAssertFalse(result, @"[0], %d", result);
+	XCTAssertFalse([self.shared.alertView.title isEqualToString:anotherTitle],		@"[%@] %@", anotherTitle, self.shared.alertView.title);
+	XCTAssertFalse([self.shared.alertView.message isEqualToString:anotherMessage],	@"[%@] %@", anotherMessage, self.shared.alertView.message);
+	XCTAssertFalse(self.shared.alertView.numberOfButtons == anotherButtons.count,	@"[%d] %d", anotherButtons.count, self.shared.alertView.numberOfButtons);
+	
+	// Showing an alert with higher priority
+    result = [IDMAlertViewManager showAlertView:newAlertView priority:IDMAlertPriorityHigh];
+    
+    XCTAssertTrue(result, @"[1], %d", result);
+	XCTAssertTrue([self.shared.alertView.title isEqualToString:anotherTitle],		@"[%@] %@", anotherTitle, self.shared.alertView.title);
+	XCTAssertTrue([self.shared.alertView.message isEqualToString:anotherMessage],	@"[%@] %@", anotherMessage, self.shared.alertView.message);
+	XCTAssertTrue(self.shared.alertView.numberOfButtons == anotherButtons.count,	@"[%d] %d", anotherButtons.count, self.shared.alertView.numberOfButtons);
+	
+	[IDMAlertViewManager simulateDismissalClick];
+}
+
 - (void)testDismiss
 {
 	// Setting properties
@@ -459,6 +526,13 @@
 	
 	[IDMAlertViewManager dismiss:NO];
 	XCTAssertFalse(self.shared.isAlertViewVisible, @"[0] %d", self.shared.isAlertViewVisible);
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    self.globalResult = YES;
 }
 
 @end

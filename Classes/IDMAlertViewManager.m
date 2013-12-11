@@ -260,13 +260,12 @@ static IDMAlertViewManager *_sharedInstance;
 		return NO;
     }
 	
-	avm.currentPriority		= priority;
 	avm.successBlock		= successBlock;
 	avm.failureBlock		= failureBlock;
-	avm.isAlertViewVisible	= YES;
-	
-	avm.alertView.title		= title;
-	avm.alertView.message	= message;
+    
+    UIAlertView *alertView  = [UIAlertView new];
+	alertView.title         = title;
+	alertView.message       = message;
     
     if (buttonsArray == nil || buttonsArray.count == 0)
     {
@@ -275,10 +274,33 @@ static IDMAlertViewManager *_sharedInstance;
 	
 	for (NSString *buttonTitle in buttonsArray)
 	{
-		[avm.alertView addButtonWithTitle:buttonTitle];
+		[alertView addButtonWithTitle:buttonTitle];
 	}
-	
-	[avm.alertView show];
+    
+    return [IDMAlertViewManager showAlertView:alertView priority:priority];
+}
+
+//  Shows a custom alert view with the given priority.
++ (BOOL)showAlertView:(UIAlertView *)alertView priority:(IDMAlertPriority)priority
+{
+    IDMAlertViewManager *avm = [IDMAlertViewManager sharedInstance];
+    
+	if ([avm isMoreImportantThanPriority:priority])
+	{
+		if (avm.failureBlock)
+		{
+			NSError *error = [[NSError alloc] initWithDomain:[NSString stringWithFormat:kHIGHER_ALERT_MESSAGE, avm.currentPriority] code:IDMAlertErrorHigherPriorityAlert userInfo:nil];
+			avm.failureBlock(error);
+		}
+		
+		return NO;
+	}
+    
+	avm.currentPriority		= priority;
+	avm.isAlertViewVisible	= YES;
+    avm.alertView           = alertView;
+    
+    [avm.alertView show];
     
     return YES;
 }
