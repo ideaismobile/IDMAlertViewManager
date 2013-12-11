@@ -1,0 +1,2098 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>IDMAlertViewManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 961)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">IDMAlertViewManager </a></h1>
+				<a id="developerHome" href="../index.html">Ideais Mobile</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">IDMAlertViewManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/alertView">&nbsp;&nbsp;&nbsp;&nbsp;alertView</option>
+	
+	<option value="//api/name/buttonsArray">&nbsp;&nbsp;&nbsp;&nbsp;buttonsArray</option>
+	
+	<option value="//api/name/currentPriority">&nbsp;&nbsp;&nbsp;&nbsp;currentPriority</option>
+	
+	<option value="//api/name/defaultConnectionFailureMessage">&nbsp;&nbsp;&nbsp;&nbsp;defaultConnectionFailureMessage</option>
+	
+	<option value="//api/name/defaultConnectionFailureTitle">&nbsp;&nbsp;&nbsp;&nbsp;defaultConnectionFailureTitle</option>
+	
+	<option value="//api/name/defaultDismissalButtonText">&nbsp;&nbsp;&nbsp;&nbsp;defaultDismissalButtonText</option>
+	
+	<option value="//api/name/failureBlock">&nbsp;&nbsp;&nbsp;&nbsp;failureBlock</option>
+	
+	<option value="//api/name/isAlertViewVisible">&nbsp;&nbsp;&nbsp;&nbsp;isAlertViewVisible</option>
+	
+	<option value="//api/name/successBlock">&nbsp;&nbsp;&nbsp;&nbsp;successBlock</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/_reinit">&nbsp;&nbsp;&nbsp;&nbsp;+ _reinit</option>
+	
+	<option value="//api/name/dismiss:">&nbsp;&nbsp;&nbsp;&nbsp;+ dismiss:</option>
+	
+	<option value="//api/name/setDefaultConnectionErrorTitle:message:">&nbsp;&nbsp;&nbsp;&nbsp;+ setDefaultConnectionErrorTitle:message:</option>
+	
+	<option value="//api/name/setDefaultConnectionErrorTitle:message:buttons:">&nbsp;&nbsp;&nbsp;&nbsp;+ setDefaultConnectionErrorTitle:message:buttons:</option>
+	
+	<option value="//api/name/setDefaultDismissalButton:">&nbsp;&nbsp;&nbsp;&nbsp;+ setDefaultDismissalButton:</option>
+	
+	<option value="//api/name/sharedInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedInstance</option>
+	
+	<option value="//api/name/showAlertView:priority:">&nbsp;&nbsp;&nbsp;&nbsp;+ showAlertView:priority:</option>
+	
+	<option value="//api/name/showAlertWithTitle:message:">&nbsp;&nbsp;&nbsp;&nbsp;+ showAlertWithTitle:message:</option>
+	
+	<option value="//api/name/showAlertWithTitle:message:priority:">&nbsp;&nbsp;&nbsp;&nbsp;+ showAlertWithTitle:message:priority:</option>
+	
+	<option value="//api/name/showAlertWithTitle:message:priority:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ showAlertWithTitle:message:priority:success:failure:</option>
+	
+	<option value="//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">&nbsp;&nbsp;&nbsp;&nbsp;+ showAlertWithTitle:message:priority:success:failure:buttons:</option>
+	
+	<option value="//api/name/showAlertWithTitle:message:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ showAlertWithTitle:message:success:failure:</option>
+	
+	<option value="//api/name/showDefaultConnectionAlertWithSuccess:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ showDefaultConnectionAlertWithSuccess:failure:</option>
+	
+	<option value="//api/name/showDefaultConnectionFailureAlert">&nbsp;&nbsp;&nbsp;&nbsp;+ showDefaultConnectionFailureAlert</option>
+	
+	<option value="//api/name/simulateDismissalClick">&nbsp;&nbsp;&nbsp;&nbsp;+ simulateDismissalClick</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/clearVolatileProperties">&nbsp;&nbsp;&nbsp;&nbsp;- clearVolatileProperties</option>
+	
+	<option value="//api/name/initSuper">&nbsp;&nbsp;&nbsp;&nbsp;- initSuper</option>
+	
+	<option value="//api/name/isMoreImportantThanPriority:">&nbsp;&nbsp;&nbsp;&nbsp;- isMoreImportantThanPriority:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Displaying Alerts">Displaying Alerts</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Dismissing Alerts">Dismissing Alerts</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Extension Methods">Extension Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/alertView">alertView</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/buttonsArray">buttonsArray</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentPriority">currentPriority</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultConnectionFailureMessage">defaultConnectionFailureMessage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultConnectionFailureTitle">defaultConnectionFailureTitle</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultDismissalButtonText">defaultDismissalButtonText</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/failureBlock">failureBlock</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAlertViewVisible">isAlertViewVisible</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/successBlock">successBlock</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_reinit">_reinit</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dismiss:">dismiss:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDefaultConnectionErrorTitle:message:">setDefaultConnectionErrorTitle:message:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDefaultConnectionErrorTitle:message:buttons:">setDefaultConnectionErrorTitle:message:buttons:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDefaultDismissalButton:">setDefaultDismissalButton:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedInstance">sharedInstance</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showAlertView:priority:">showAlertView:priority:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showAlertWithTitle:message:">showAlertWithTitle:message:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showAlertWithTitle:message:priority:">showAlertWithTitle:message:priority:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:">showAlertWithTitle:message:priority:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">showAlertWithTitle:message:priority:success:failure:buttons:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showAlertWithTitle:message:success:failure:">showAlertWithTitle:message:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showDefaultConnectionAlertWithSuccess:failure:">showDefaultConnectionAlertWithSuccess:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showDefaultConnectionFailureAlert">showDefaultConnectionFailureAlert</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/simulateDismissalClick">simulateDismissalClick</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearVolatileProperties">clearVolatileProperties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initSuper">initSuper</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isMoreImportantThanPriority:">isMoreImportantThanPriority:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="IDMAlertViewManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">IDMAlertViewManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">UIAlertViewDelegate</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">IDMAlertViewManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>An <code>UIAlertView</code> manager to handle different priorities alerts. Also terminates the problem of having multiple alerts being displayed above one another.</p>
+
+<pre><code>No more than one `UIAlertView` is visible at a time. If two alerts with the same priority pops, only the first arrived stay visible. The second one is dismissed calling the `errorBlock`, if any.
+If comes an alert with higher priority than the visible one, the old is dismissed and the new one is displayed.
+</code></pre>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDefaultConnectionErrorTitle:message:">+&nbsp;setDefaultConnectionErrorTitle:message:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDefaultConnectionErrorTitle:message:buttons:">+&nbsp;setDefaultConnectionErrorTitle:message:buttons:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDefaultDismissalButton:">+&nbsp;setDefaultDismissalButton:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Displaying Alerts" name="task_Displaying Alerts"></a>
+						<h3 class="subsubtitle task-title">Displaying Alerts</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showDefaultConnectionFailureAlert">+&nbsp;showDefaultConnectionFailureAlert</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showDefaultConnectionAlertWithSuccess:failure:">+&nbsp;showDefaultConnectionAlertWithSuccess:failure:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showAlertWithTitle:message:">+&nbsp;showAlertWithTitle:message:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showAlertWithTitle:message:priority:">+&nbsp;showAlertWithTitle:message:priority:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showAlertWithTitle:message:success:failure:">+&nbsp;showAlertWithTitle:message:success:failure:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:">+&nbsp;showAlertWithTitle:message:priority:success:failure:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">+&nbsp;showAlertWithTitle:message:priority:success:failure:buttons:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showAlertView:priority:">+&nbsp;showAlertView:priority:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Dismissing Alerts" name="task_Dismissing Alerts"></a>
+						<h3 class="subsubtitle task-title">Dismissing Alerts</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dismiss:">+&nbsp;dismiss:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h3 class="subsubtitle task-title">Extension Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentPriority">&nbsp;&nbsp;currentPriority</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/successBlock">&nbsp;&nbsp;successBlock</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/failureBlock">&nbsp;&nbsp;failureBlock</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultConnectionFailureTitle">&nbsp;&nbsp;defaultConnectionFailureTitle</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultConnectionFailureMessage">&nbsp;&nbsp;defaultConnectionFailureMessage</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultDismissalButtonText">&nbsp;&nbsp;defaultDismissalButtonText</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/buttonsArray">&nbsp;&nbsp;buttonsArray</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/alertView">&nbsp;&nbsp;alertView</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isAlertViewVisible">&nbsp;&nbsp;isAlertViewVisible</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initSuper">&ndash;&nbsp;initSuper</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearVolatileProperties">&ndash;&nbsp;clearVolatileProperties</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isMoreImportantThanPriority:">&ndash;&nbsp;isMoreImportantThanPriority:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedInstance">+&nbsp;sharedInstance</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_reinit">+&nbsp;_reinit</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/simulateDismissalClick">+&nbsp;simulateDismissalClick</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/alertView" title="alertView"></a>
+	<h3 class="subsubtitle method-title">alertView</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The visible alert view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIAlertView *alertView</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The visible alert view.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/buttonsArray" title="buttonsArray"></a>
+	<h3 class="subsubtitle method-title">buttonsArray</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The &ldquo;other buttons&rdquo; array for dismissing the default connection failure alert.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSArray *buttonsArray</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The &ldquo;other buttons&rdquo; array for dismissing the default connection failure alert.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentPriority" title="currentPriority"></a>
+	<h3 class="subsubtitle method-title">currentPriority</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The priority of the current alert visible. If there&rsquo;s none, it&rsquo;s <code>INFINITY</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) IDMAlertPriority currentPriority</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The priority of the current alert visible. If there&rsquo;s none, it&rsquo;s <code>INFINITY</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/defaultConnectionFailureMessage" title="defaultConnectionFailureMessage"></a>
+	<h3 class="subsubtitle method-title">defaultConnectionFailureMessage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The text message for the default connection failure alert.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *defaultConnectionFailureMessage</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The text message for the default connection failure alert.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/defaultConnectionFailureTitle" title="defaultConnectionFailureTitle"></a>
+	<h3 class="subsubtitle method-title">defaultConnectionFailureTitle</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The title for the default connection failure alert.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *defaultConnectionFailureTitle</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The title for the default connection failure alert.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/defaultDismissalButtonText" title="defaultDismissalButtonText"></a>
+	<h3 class="subsubtitle method-title">defaultDismissalButtonText</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The default text of the dismissal button. If not set, the default value is <code>OK</code></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *defaultDismissalButtonText</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The default text of the dismissal button. If not set, the default value is <code>OK</code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/failureBlock" title="failureBlock"></a>
+	<h3 class="subsubtitle method-title">failureBlock</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The failure block to be called when the visible alert view gets dismissed by any reason different than the user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) IDMAlertViewFailureBlock failureBlock</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The failure block to be called when the visible alert view gets dismissed by any reason different than the user.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isAlertViewVisible" title="isAlertViewVisible"></a>
+	<h3 class="subsubtitle method-title">isAlertViewVisible</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates if the current alert view is visible. Necessary because [UIAlertView show] might be called, but it&rsquo;s <code>isVisible</code> is yet <code>NO</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL isAlertViewVisible</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Indicates if the current alert view is visible. Necessary because [UIAlertView show] might be called, but it&rsquo;s <code>isVisible</code> is yet <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/successBlock" title="successBlock"></a>
+	<h3 class="subsubtitle method-title">successBlock</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The success block to be called when the visible alert view gets dismissed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) IDMAlertViewSuccessBlock successBlock</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The success block to be called when the visible alert view gets dismissed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/_reinit" title="_reinit"></a>
+	<h3 class="subsubtitle method-title">_reinit</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inits another IDMAlertViewManager</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)_reinit</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inits another IDMAlertViewManager</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dismiss:" title="dismiss:"></a>
+	<h3 class="subsubtitle method-title">dismiss:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Dismiss the visible UIAlertView, if any.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)dismiss:(BOOL)<em>animated</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>animated</em></dt>
+			<dd><p>A BOOL indicating if the dismissal should be animated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Dismiss the visible UIAlertView, if any.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDefaultConnectionErrorTitle:message:" title="setDefaultConnectionErrorTitle:message:"></a>
+	<h3 class="subsubtitle method-title">setDefaultConnectionErrorTitle:message:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the title and message for the default connection failure alert.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)setDefaultConnectionErrorTitle:(NSString *)<em>title</em> message:(NSString *)<em>message</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><p>The UIAlertView title</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>message</em></dt>
+			<dd><p>The UIAlertView text message</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Whether or not the params were set.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the title and message for the default connection failure alert.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDefaultConnectionErrorTitle:message:buttons:" title="setDefaultConnectionErrorTitle:message:buttons:"></a>
+	<h3 class="subsubtitle method-title">setDefaultConnectionErrorTitle:message:buttons:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the title, message and dismiss buttons for the default connection failure alert.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)setDefaultConnectionErrorTitle:(NSString *)<em>title</em> message:(NSString *)<em>message</em> buttons:(NSArray *)<em>buttonsArray</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><p>The UIAlertView title</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>message</em></dt>
+			<dd><p>The UIAlertView text message</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>buttonsArray</em></dt>
+			<dd><p>A NSArray of NSStrings with dismiss buttons for the UIAlertView</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Whether or not the params were set.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the title, message and dismiss buttons for the default connection failure alert.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDefaultDismissalButton:" title="setDefaultDismissalButton:"></a>
+	<h3 class="subsubtitle method-title">setDefaultDismissalButton:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Changes the default message for the main dismissal button. If not set, the default value is &ldquo;OK&rdquo;</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)setDefaultDismissalButton:(NSString *)<em>dismissButtonMessage</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dismissButtonMessage</em></dt>
+			<dd><p>The new text for the main dismissal button.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Whether or not the button was set.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Changes the default message for the main dismissal button. If not set, the default value is &ldquo;OK&rdquo;</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedInstance" title="sharedInstance"></a>
+	<h3 class="subsubtitle method-title">sharedInstance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the shared instance for the singleton. Initializes it if it&rsquo;s nil.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (IDMAlertViewManager *)sharedInstance</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the shared instance for the singleton. Initializes it if it&rsquo;s nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showAlertView:priority:" title="showAlertView:priority:"></a>
+	<h3 class="subsubtitle method-title">showAlertView:priority:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Shows a custom alert view with the given priority.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)showAlertView:(UIAlertView *)<em>alertView</em> priority:(IDMAlertPriority)<em>priority</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>alertView</em></dt>
+			<dd><p>An instance of UIAlertView</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>priority</em></dt>
+			<dd><p>The alert priority</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Shows a custom alert view with the given priority.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showAlertWithTitle:message:" title="showAlertWithTitle:message:"></a>
+	<h3 class="subsubtitle method-title">showAlertWithTitle:message:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Shows an alert with the given <code>title</code> and <code>message</code> and the default priority <code>IDMAlertPriorityMedium</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)showAlertWithTitle:(NSString *)<em>title</em> message:(NSString *)<em>message</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><p>The UIAlertView title</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>message</em></dt>
+			<dd><p>The UIAlertView text message</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Whether or not the alert was displayed.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Shows an alert with the given <code>title</code> and <code>message</code> and the default priority <code>IDMAlertPriorityMedium</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:">+ showAlertWithTitle:message:priority:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">+ showAlertWithTitle:message:priority:success:failure:buttons:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showAlertWithTitle:message:priority:" title="showAlertWithTitle:message:priority:"></a>
+	<h3 class="subsubtitle method-title">showAlertWithTitle:message:priority:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Shows an alert with the given <code>title</code>, <code>message</code> and <code>priority</code>. If an alert with lower priority than this is currently visible, it gets dismissed and this alert takes it&rsquo;s place.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)showAlertWithTitle:(NSString *)<em>title</em> message:(NSString *)<em>message</em> priority:(IDMAlertPriority)<em>priority</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><p>The UIAlertView title</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>message</em></dt>
+			<dd><p>The UIAlertView text message</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>priority</em></dt>
+			<dd><p>The alert priority</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Whether or not the alert was displayed.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Shows an alert with the given <code>title</code>, <code>message</code> and <code>priority</code>. If an alert with lower priority than this is currently visible, it gets dismissed and this alert takes it&rsquo;s place.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">+ showAlertWithTitle:message:priority:success:failure:buttons:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showAlertWithTitle:message:priority:success:failure:" title="showAlertWithTitle:message:priority:success:failure:"></a>
+	<h3 class="subsubtitle method-title">showAlertWithTitle:message:priority:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Shows an alert with the given <code>title</code>, <code>message</code> and <code>priority</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)showAlertWithTitle:(NSString *)<em>title</em> message:(NSString *)<em>message</em> priority:(IDMAlertPriority)<em>priority</em> success:(IDMAlertViewSuccessBlock)<em>successBlock</em> failure:(IDMAlertViewFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><p>The UIAlertView title</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>message</em></dt>
+			<dd><p>The UIAlertView text message</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>priority</em></dt>
+			<dd><p>The alert priority</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>The block gets called when the user dismisses a <code>UIAlertView</code>. <code>Similar to alertView:clickedButtonAtIndex:</code></p>
+
+<ul>
+<li><em>selectedIndex</em>: The index of the clicked button.</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>The error block that&rsquo;s called when a <code>UIAlertView</code> is dissmissed by any reason other than the user&rsquo;s interaction. Will be called if an alert with higher priority than the visible one gets called.</p>
+
+<ul>
+<li><em>error</em>: The error that occurred.</li>
+</ul>
+</dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Whether or not the alert was displayed.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Shows an alert with the given <code>title</code>, <code>message</code> and <code>priority</code>.</p>
+
+<p>When dismissed, the <a href="#//api/name/successBlock"><code>successBlock</code></a> is called with the index for the clicked button.
+If an alert with higher priority is prompted, the <a href="#//api/name/failureBlock"><code>failureBlock</code></a> is called.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Constants/IDMAlertError.html">IDMAlertError</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">+ showAlertWithTitle:message:priority:success:failure:buttons:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showAlertWithTitle:message:priority:success:failure:buttons:" title="showAlertWithTitle:message:priority:success:failure:buttons:"></a>
+	<h3 class="subsubtitle method-title">showAlertWithTitle:message:priority:success:failure:buttons:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Shows an alert with the given <code>title</code>, <code>message</code>, <code>priority</code> and <code>buttons</code> for dismissing the UIAlertView.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)showAlertWithTitle:(NSString *)<em>title</em> message:(NSString *)<em>message</em> priority:(IDMAlertPriority)<em>priority</em> success:(IDMAlertViewSuccessBlock)<em>successBlock</em> failure:(IDMAlertViewFailureBlock)<em>failureBlock</em> buttons:(NSArray *)<em>buttonsArray</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><p>The UIAlertView title</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>message</em></dt>
+			<dd><p>The UIAlertView text message</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>priority</em></dt>
+			<dd><p>The alert priority</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>The block gets called when the user dismisses a <code>UIAlertView</code>. <code>Similar to alertView:clickedButtonAtIndex:</code></p>
+
+<ul>
+<li><em>selectedIndex</em>: The index of the clicked button.</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>The error block that&rsquo;s called when a <code>UIAlertView</code> is dissmissed by any reason other than the user&rsquo;s interaction. Will be called if an alert with higher priority than the visible one gets called.</p>
+
+<ul>
+<li><em>error</em>: The error that occurred.</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>buttonsArray</em></dt>
+			<dd><p>A NSArray of NSStrings with dismiss buttons for the UIAlertView</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Whether or not the alert was displayed.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Shows an alert with the given <code>title</code>, <code>message</code>, <code>priority</code> and <code>buttons</code> for dismissing the UIAlertView.</p>
+
+<p>When dismissed, the <a href="#//api/name/successBlock"><code>successBlock</code></a> is called with the index for the clicked button.
+If an alert with higher priority is prompted, the <a href="#//api/name/failureBlock"><code>failureBlock</code></a> is called.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Constants/IDMAlertError.html">IDMAlertError</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showAlertWithTitle:message:success:failure:" title="showAlertWithTitle:message:success:failure:"></a>
+	<h3 class="subsubtitle method-title">showAlertWithTitle:message:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Shows an alert with the given <code>title</code> and <code>message</code> and the default priority <code>IDMAlertPriorityMedium</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)showAlertWithTitle:(NSString *)<em>title</em> message:(NSString *)<em>message</em> success:(IDMAlertViewSuccessBlock)<em>successBlock</em> failure:(IDMAlertViewFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><p>The UIAlertView title</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>message</em></dt>
+			<dd><p>The UIAlertView text message</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>The block gets called when the user dismisses a <code>UIAlertView</code>. <code>Similar to alertView:clickedButtonAtIndex:</code></p>
+
+<ul>
+<li><em>selectedIndex</em>: The index of the clicked button.</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>The error block that&rsquo;s called when a <code>UIAlertView</code> is dissmissed by any reason other than the user&rsquo;s interaction. Will be called if an alert with higher priority than the visible one gets called.</p>
+
+<ul>
+<li><em>error</em>: The error that occurred.</li>
+</ul>
+</dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Whether or not the alert was displayed.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Shows an alert with the given <code>title</code> and <code>message</code> and the default priority <code>IDMAlertPriorityMedium</code>.</p>
+
+<p>When dismissed, the <a href="#//api/name/successBlock"><code>successBlock</code></a> is called with the index for the clicked button.
+If an alert with higher priority is prompted, the <a href="#//api/name/failureBlock"><code>failureBlock</code></a> is called.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Constants/IDMAlertError.html">IDMAlertError</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:">+ showAlertWithTitle:message:priority:success:failure:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/showAlertWithTitle:message:priority:success:failure:buttons:">+ showAlertWithTitle:message:priority:success:failure:buttons:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showDefaultConnectionAlertWithSuccess:failure:" title="showDefaultConnectionAlertWithSuccess:failure:"></a>
+	<h3 class="subsubtitle method-title">showDefaultConnectionAlertWithSuccess:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Shows the default connection error alert. This alert is displayed with the default priority <code>IDMAlertPriorityMedium</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)showDefaultConnectionAlertWithSuccess:(IDMAlertViewSuccessBlock)<em>successBlock</em> failure:(IDMAlertViewFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>The block gets called when the user dismisses a <code>UIAlertView</code>. <code>Similar to alertView:clickedButtonAtIndex:</code></p>
+
+<ul>
+<li><em>selectedIndex</em>: The index of the clicked button.</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>The error block that&rsquo;s called when a <code>UIAlertView</code> is dissmissed by any reason other than the user&rsquo;s interaction. Will be called if an alert with higher priority than the visible one gets called.</p>
+
+<ul>
+<li><em>error</em>: The error that occurred.</li>
+</ul>
+</dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Whether or not the alert was displayed.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Shows the default connection error alert. This alert is displayed with the default priority <code>IDMAlertPriorityMedium</code>.</p>
+
+<p>When dismissed, the <a href="#//api/name/successBlock"><code>successBlock</code></a> is called with the index for the clicked button.
+If an alert with higher priority is prompted, the <a href="#//api/name/failureBlock"><code>failureBlock</code></a> is called.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Constants/IDMAlertError.html">IDMAlertError</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/setDefaultConnectionErrorTitle:message:">+ setDefaultConnectionErrorTitle:message:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/setDefaultConnectionErrorTitle:message:buttons:">+ setDefaultConnectionErrorTitle:message:buttons:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/showDefaultConnectionFailureAlert" title="showDefaultConnectionFailureAlert"></a>
+	<h3 class="subsubtitle method-title">showDefaultConnectionFailureAlert</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Shows the default connection error alert. This alert is displayed with the default priority <code>IDMAlertPriorityMedium</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)showDefaultConnectionFailureAlert</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Whether or not the alert was displayed.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Shows the default connection error alert. This alert is displayed with the default priority <code>IDMAlertPriorityMedium</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/setDefaultConnectionErrorTitle:message:">+ setDefaultConnectionErrorTitle:message:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/setDefaultConnectionErrorTitle:message:buttons:">+ setDefaultConnectionErrorTitle:message:buttons:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/simulateDismissalClick" title="simulateDismissalClick"></a>
+	<h3 class="subsubtitle method-title">simulateDismissalClick</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Simulates the user clicking to dismiss a alert view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)simulateDismissalClick</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Simulates the user clicking to dismiss a alert view.</p><div class="warning"><p><strong>Warning:</strong> For testing purposes only!</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/clearVolatileProperties" title="clearVolatileProperties"></a>
+	<h3 class="subsubtitle method-title">clearVolatileProperties</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Clears the volatile properties like <a href="#//api/name/successBlock"><code>successBlock</code></a>, <a href="#//api/name/failureBlock"><code>failureBlock</code></a> and <a href="#//api/name/currentPriority"><code>currentPriority</code></a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)clearVolatileProperties</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Clears the volatile properties like <a href="#//api/name/successBlock"><code>successBlock</code></a>, <a href="#//api/name/failureBlock"><code>failureBlock</code></a> and <a href="#//api/name/currentPriority"><code>currentPriority</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initSuper" title="initSuper"></a>
+	<h3 class="subsubtitle method-title">initSuper</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes the shared instance for the singleton.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initSuper</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes the shared instance for the singleton.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isMoreImportantThanPriority:" title="isMoreImportantThanPriority:"></a>
+	<h3 class="subsubtitle method-title">isMoreImportantThanPriority:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Check the importance of the current alert priority, if any, against the given one. If this priority is higher, dismiss the current alert.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isMoreImportantThanPriority:(IDMAlertPriority)<em>priority</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>priority</em></dt>
+			<dd><p>A <a href="../Constants/IDMAlertPriority.html">IDMAlertPriority</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Check the importance of the current alert priority, if any, against the given one. If this priority is higher, dismiss the current alert.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IDMAlertViewManager_Tests.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Ideais Mobile. All rights reserved. (Last updated: 2013-12-11)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
