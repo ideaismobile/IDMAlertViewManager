@@ -40,7 +40,7 @@ static char _failureBlock;
 
 - (void)setPriority:(IDMAlertPriority)priority
 {
-    objc_setAssociatedObject(self, &_priority, @(priority), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &_priority, @(priority), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 #pragma mark - Success Block
@@ -52,7 +52,7 @@ static char _failureBlock;
 
 - (void)setSuccessBlock:(IDMAlertViewSuccessBlock)successBlock
 {
-    objc_setAssociatedObject(self, &_successBlock, successBlock, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, &_successBlock, successBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 #pragma mark - Failure Block
@@ -64,7 +64,7 @@ static char _failureBlock;
 
 - (void)setFailureBlock:(IDMAlertViewFailureBlock)failureBlock
 {
-    objc_setAssociatedObject(self, &_failureBlock, failureBlock, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, &_failureBlock, failureBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
